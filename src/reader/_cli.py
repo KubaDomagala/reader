@@ -11,12 +11,11 @@ import click
 import yaml
 
 import reader
-
-from . import StorageError
-from ._config import make_reader_config
-from ._config import make_reader_from_config
-from ._plugins import Loader
-from ._plugins import LoaderError
+from reader import StorageError
+from reader._config import make_reader_config
+from reader._config import make_reader_from_config
+from reader._plugins import Loader
+from reader._plugins import LoaderError
 
 
 APP_NAME = reader.__name__
@@ -57,12 +56,17 @@ def make_reader_with_plugins(**kwargs):
 
 def setup_logging(verbose):
     if verbose < 0:
+        branch_coverage["branch-lower_0"] = True
         return
+    branch_coverage["branch-lower_0_else"] = True
     if verbose == 0:
+        branch_coverage["branch-equals_0"] = True
         level = logging.WARNING
     elif verbose == 1:
+        branch_coverage["branch-equals_1"] = True
         level = logging.INFO
     else:
+        branch_coverage["branch-else"] = True
         level = logging.DEBUG
     logging.getLogger('reader').setLevel(level)
     handler = logging.StreamHandler()
@@ -483,5 +487,35 @@ except ImportError:
     pass
 
 
+branch_coverage = {
+    "branch-lower_0": False,
+    "branch-lower_0_else": False,
+    "branch-equals_0": False,
+    "branch-equals_1": False,
+    "branch-else": False,
+}
+
+
+def print_coverage(verbose):
+    print(f"TEST VERBOSE = {verbose}")
+    for branch, hit in branch_coverage.items():
+        print(f"branch_id: {branch}, hit: {hit}")
+
+    print("\n")
+
+
 if __name__ == '__main__':
-    cli()
+    if "coverage-measure" in sys.argv:
+        setup_logging(-1)
+        print_coverage(-1)
+
+        setup_logging(0)
+        print_coverage(0)
+
+        setup_logging(1)
+        print_coverage(1)
+
+        setup_logging(2)
+        print_coverage(2)
+    else:
+        cli()

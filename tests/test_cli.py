@@ -12,6 +12,7 @@ from reader import ReaderError
 from reader import UpdateHookError
 from reader._cli import cli
 from reader._cli import config_option
+from reader._cli import setup_logging
 from reader.types import MISSING
 from utils import make_url_base
 
@@ -307,6 +308,22 @@ def test_cli_serve_calls_create_app(db_path, monkeypatch):
     assert create_app.config.merged('default') == {
         'reader': {'url': db_path},
     }
+
+
+@pytest.mark.slow
+def test_cli_settup_logging():
+
+    setup_logging(-1)
+    assert logging.getLogger('reader').getEffectiveLevel() == 30
+
+    setup_logging(0)
+    assert logging.getLogger('reader').getEffectiveLevel() == 30
+
+    setup_logging(1)
+    assert logging.getLogger('reader').getEffectiveLevel() == 20
+
+    setup_logging(2)
+    assert logging.getLogger('reader').getEffectiveLevel() == 10
 
 
 def test_config_option(tmp_path):
