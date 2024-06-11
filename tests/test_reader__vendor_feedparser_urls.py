@@ -9,6 +9,3 @@ def test_make_safe_absolute_uri():
     assert make_safe_absolute_uri(base, "scheme") == ""
 
     print_coverage_url()
-
-
-test_make_safe_absolute_uri()

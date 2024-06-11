@@ -102,7 +102,7 @@ def print_coverage_url():
 def make_safe_absolute_uri(base, rel=None):
     # bail if ACCEPTABLE_URI_SCHEMES is empty
     if not ACCEPTABLE_URI_SCHEMES:
-        branch_coverage["brach1"] = True
+        branch_coverage["branch1"] = True
         return _urljoin(base, rel or '')
     branch_coverage["branch2"] = True
     if not base:
@@ -113,10 +113,10 @@ def make_safe_absolute_uri(base, rel=None):
         try:
             scheme = urllib.parse.urlparse(base)[0]
         except ValueError:
-            branch_coverage["brach5"] = True
+            branch_coverage["branch5"] = True
             return ''
         if not scheme or scheme in ACCEPTABLE_URI_SCHEMES:
-            branch_coverage["brach6"] = True
+            branch_coverage["branch6"] = True
             return base
         return ''
     uri = _urljoin(base, rel)
