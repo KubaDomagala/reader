@@ -39,6 +39,15 @@ from .sanitizer import sanitize_html, HTMLSanitizer
 from .util import FeedParserDict
 from .urls import _urljoin, make_safe_absolute_uri, resolve_relative_uris
 
+branch_coverage = {
+    "map_content_type_1": False,
+    "map_content_type_2": False,
+    "map_content_type_3": False
+}
+
+def print_coverage():
+    for branch, hit in branch_coverage.items():
+        print(f"\n{branch} was {'hit' if hit else 'not hit'}")
 
 class XMLParserMixin(
         _base.Namespace,
@@ -196,8 +205,10 @@ class XMLParserMixin(
         self.svgOK = 0
         self.title_depth = -1
         self.depth = 0
-        if self.lang:
-            self.feeddata['language'] = self.lang.replace('_', '-')
+
+        # --- Removed the following two lines because obj XML has no lang attribute
+        #if self.lang: 
+        #    self.feeddata['language'] = self.lang.replace('_', '-')  
 
         # A map of the following form:
         #     {
@@ -420,13 +431,18 @@ class XMLParserMixin(
 
     @staticmethod
     def map_content_type(content_type):
+
         content_type = content_type.lower()
         if content_type == 'text' or content_type == 'plain':
+            branch_coverage["map_content_type_1"] = True
             content_type = 'text/plain'
         elif content_type == 'html':
+            branch_coverage["map_content_type_2"] = True
             content_type = 'text/html'
         elif content_type == 'xhtml':
+            branch_coverage["map_content_type_3"] = True
             content_type = 'application/xhtml+xml'
+        print_coverage()
         return content_type
 
     def track_namespace(self, prefix, uri):
@@ -671,14 +687,32 @@ class XMLParserMixin(
         return attrs_d.get(self._map_to_standard_prefix(name))
 
     def _is_base64(self, attrs_d, contentparams):
+        branch_coverage = {
+            "is_base64_1": False,
+            "is_base64_2": False,
+            "is_base64_3": False,
+            "is_base64_4": False,
+            "is_base64_5": False
+        }
+
+        def print_coverage():
+            for branch, hit in branch_coverage.items():
+                print(f"\n{branch} was {'hit' if hit else 'not hit'}")
+
         if attrs_d.get('mode', '') == 'base64':
+            branch_coverage["is_base64_1"] = True
             return 1
         if self.contentparams['type'].startswith('text/'):
+            branch_coverage["is_base64_2"] = True
             return 0
         if self.contentparams['type'].endswith('+xml'):
+            branch_coverage["is_base64_3"] = True
             return 0
         if self.contentparams['type'].endswith('/xml'):
+            branch_coverage["is_base64_4"] = True
             return 0
+        branch_coverage["is_base64_5"] = True
+        print_coverage()
         return 1
 
     @staticmethod
