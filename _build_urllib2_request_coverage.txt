@@ -1,0 +1,70 @@
+_build_urllib2_request_branch_1, hit: False
+_build_urllib2_request_branch_2, hit: False
+_build_urllib2_request_branch_3, hit: False
+_build_urllib2_request_branch_4, hit: False
+_build_urllib2_request_branch_5, hit: False
+_build_urllib2_request_branch_6, hit: False
+_build_urllib2_request_branch_7, hit: False
+
+
+_build_urllib2_request_branch_1, hit: False
+_build_urllib2_request_branch_2, hit: False
+_build_urllib2_request_branch_3, hit: False
+_build_urllib2_request_branch_4, hit: False
+_build_urllib2_request_branch_5, hit: False
+_build_urllib2_request_branch_6, hit: False
+_build_urllib2_request_branch_7, hit: False
+
+
+_build_urllib2_request_branch_1, hit: True
+_build_urllib2_request_branch_2, hit: False
+_build_urllib2_request_branch_3, hit: False
+_build_urllib2_request_branch_4, hit: False
+_build_urllib2_request_branch_5, hit: False
+_build_urllib2_request_branch_6, hit: False
+_build_urllib2_request_branch_7, hit: False
+
+
+_build_urllib2_request_branch_1, hit: True
+_build_urllib2_request_branch_2, hit: True
+_build_urllib2_request_branch_3, hit: False
+_build_urllib2_request_branch_4, hit: False
+_build_urllib2_request_branch_5, hit: False
+_build_urllib2_request_branch_6, hit: False
+_build_urllib2_request_branch_7, hit: False
+
+
+_build_urllib2_request_branch_1, hit: True
+_build_urllib2_request_branch_2, hit: True
+_build_urllib2_request_branch_3, hit: True
+_build_urllib2_request_branch_4, hit: True
+_build_urllib2_request_branch_5, hit: False
+_build_urllib2_request_branch_6, hit: False
+_build_urllib2_request_branch_7, hit: False
+
+
+_build_urllib2_request_branch_1, hit: True
+_build_urllib2_request_branch_2, hit: True
+_build_urllib2_request_branch_3, hit: True
+_build_urllib2_request_branch_4, hit: True
+_build_urllib2_request_branch_5, hit: True
+_build_urllib2_request_branch_6, hit: False
+_build_urllib2_request_branch_7, hit: False
+
+
+_build_urllib2_request_branch_1, hit: True
+_build_urllib2_request_branch_2, hit: True
+_build_urllib2_request_branch_3, hit: True
+_build_urllib2_request_branch_4, hit: True
+_build_urllib2_request_branch_5, hit: True
+_build_urllib2_request_branch_6, hit: True
+_build_urllib2_request_branch_7, hit: False
+
+
+_build_urllib2_request_branch_1, hit: True
+_build_urllib2_request_branch_2, hit: True
+_build_urllib2_request_branch_3, hit: True
+_build_urllib2_request_branch_4, hit: True
+_build_urllib2_request_branch_5, hit: True
+_build_urllib2_request_branch_6, hit: True
+_build_urllib2_request_branch_7, hit: True

@@ -56,17 +56,17 @@ def make_reader_with_plugins(**kwargs):
 
 def setup_logging(verbose):
     if verbose < 0:
-        branch_coverage["branch-lower_0"] = True
+        branch_coverage['setup_logging_branch_1'] = True
         return
-    branch_coverage["branch-lower_0_else"] = True
+    branch_coverage['setup_logging_branch_2'] = True
     if verbose == 0:
-        branch_coverage["branch-equals_0"] = True
+        branch_coverage['setup_logging_branch_3'] = True
         level = logging.WARNING
     elif verbose == 1:
-        branch_coverage["branch-equals_1"] = True
+        branch_coverage['setup_logging_branch_4'] = True
         level = logging.INFO
     else:
-        branch_coverage["branch-else"] = True
+        branch_coverage['setup_logging_branch_5'] = True
         level = logging.DEBUG
     logging.getLogger('reader').setLevel(level)
     handler = logging.StreamHandler()
@@ -488,34 +488,34 @@ except ImportError:
 
 
 branch_coverage = {
-    "branch-lower_0": False,
-    "branch-lower_0_else": False,
-    "branch-equals_0": False,
-    "branch-equals_1": False,
-    "branch-else": False,
+    "setup_logging_branch_1": False,
+    "setup_logging_branch_2": False,
+    "setup_logging_branch_3": False,
+    "setup_logging_branch_4": False,
+    "setup_logging_branch_5": False,
 }
 
 
-def print_coverage(verbose):
-    print(f"TEST VERBOSE = {verbose}")
-    for branch, hit in branch_coverage.items():
-        print(f"branch_id: {branch}, hit: {hit}")
+def print_coverage_setup_logging():
+    with open('setup_logging_coverage.txt', 'a') as file:
+        for branch, hit in branch_coverage.items():
+            print(f"{branch}, hit: {hit}", file=file)
 
-    print("\n")
+        print("\n", file=file)
 
 
 if __name__ == '__main__':
     if "coverage-measure" in sys.argv:
         setup_logging(-1)
-        print_coverage(-1)
+        print_coverage_setup_logging()
 
         setup_logging(0)
-        print_coverage(0)
+        print_coverage_setup_logging()
 
         setup_logging(1)
-        print_coverage(1)
+        print_coverage_setup_logging()
 
         setup_logging(2)
-        print_coverage(2)
+        print_coverage_setup_logging()
     else:
         cli()

@@ -88,17 +88,38 @@ class URLHandler(urllib.request.HTTPDigestAuthHandler, urllib.request.HTTPRedire
         self.reset_retry_count()
         return retry
 
+branch_coverage = {
+    "_build_urllib2_request_branch_1" : False,
+    "_build_urllib2_request_branch_2" : False,
+    "_build_urllib2_request_branch_3" : False,
+    "_build_urllib2_request_branch_4" : False,
+    "_build_urllib2_request_branch_5" : False,
+    "_build_urllib2_request_branch_6" : False,
+    "_build_urllib2_request_branch_7" : False 
+}
+
+def print_coverage__build():
+    with open('_build_urllib2_request_coverage.txt', 'a') as file:
+        for branch, hit in branch_coverage.items():
+            print(f"{branch}, hit: {hit}", file=file)
+
+        print("\n", file=file)
+
 
 def _build_urllib2_request(url, agent, accept_header, etag, modified, referrer, auth, request_headers):
     request = urllib.request.Request(url)
     request.add_header('User-Agent', agent)
     if etag:
+        branch_coverage["_build_urllib2_request_branch_1"] = True
         request.add_header('If-None-Match', etag)
     if isinstance(modified, str):
+        branch_coverage["_build_urllib2_request_branch_2"] = True
         modified = _parse_date(modified)
     elif isinstance(modified, datetime.datetime):
+        branch_coverage["_build_urllib2_request_branch_3"] = True
         modified = modified.utctimetuple()
     if modified:
+        branch_coverage["_build_urllib2_request_branch_4"] = True
         # format into an RFC 1123-compliant timestamp. We can't use
         # time.strftime() since the %a and %b directives can be affected
         # by the current locale, but RFC 2616 states that dates must be
@@ -107,11 +128,14 @@ def _build_urllib2_request(url, agent, accept_header, etag, modified, referrer, 
         months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
         request.add_header('If-Modified-Since', '%s, %02d %s %04d %02d:%02d:%02d GMT' % (short_weekdays[modified[6]], modified[2], months[modified[1] - 1], modified[0], modified[3], modified[4], modified[5]))
     if referrer:
+        branch_coverage["_build_urllib2_request_branch_5"] = True
         request.add_header('Referer', referrer)
     request.add_header('Accept-encoding', 'gzip, deflate')
     if auth:
+        branch_coverage["_build_urllib2_request_branch_6"] = True
         request.add_header('Authorization', 'Basic %s' % auth)
     if accept_header:
+        branch_coverage["_build_urllib2_request_branch_7"] = True
         request.add_header('Accept', accept_header)
     # use this for whatever -- cookies, special headers, etc
     # [('Cookie','Something'),('x-special-header','Another Value')]

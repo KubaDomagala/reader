@@ -12,6 +12,7 @@ from reader import ReaderError
 from reader import UpdateHookError
 from reader._cli import cli
 from reader._cli import config_option
+from reader._cli import print_coverage_setup_logging
 from reader._cli import setup_logging
 from reader.types import MISSING
 from utils import make_url_base
@@ -313,17 +314,25 @@ def test_cli_serve_calls_create_app(db_path, monkeypatch):
 @pytest.mark.slow
 def test_cli_settup_logging():
 
+    open('setup_logging_coverage.txt', 'w').close()
+
+    print_coverage_setup_logging()
     setup_logging(-1)
     assert logging.getLogger('reader').getEffectiveLevel() == 30
 
+    print_coverage_setup_logging()
     setup_logging(0)
     assert logging.getLogger('reader').getEffectiveLevel() == 30
 
+    print_coverage_setup_logging()
     setup_logging(1)
     assert logging.getLogger('reader').getEffectiveLevel() == 20
 
+    print_coverage_setup_logging()
     setup_logging(2)
     assert logging.getLogger('reader').getEffectiveLevel() == 10
+
+    print_coverage_setup_logging()
 
 
 def test_config_option(tmp_path):
