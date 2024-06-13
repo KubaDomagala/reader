@@ -1,4 +1,4 @@
-setup_logging_branch_1, hit: True
+setup_logging_branch_1, hit: False
 setup_logging_branch_2, hit: True
 setup_logging_branch_3, hit: True
 setup_logging_branch_4, hit: False

@@ -6,6 +6,9 @@ from reader._vendor.feedparser.http import print_coverage__build
 
 def test_build_urllib2_request():
     open('_build_urllib2_request_coverage.txt', 'w').close()
+
+    print_coverage__build()
+
     url = "https://example.com/#anger"
     request_headers = {'Cookie': 'Something', "X": "data"}
     agent = "agent"
