@@ -25,7 +25,7 @@ Usage: The tool was used by following the guide on the contribute page of the pr
   (tests in between that were skipped in the screenshots)
   <img src="readme_imgs/coverage_tool_run_2.png"
    alt="Coverage 2 before"
-   style="float: left; margin-right: 10px;" />S
+   style="float: left; margin-right: 10px;" />
 
 ### Your own coverage tool
 
@@ -68,6 +68,8 @@ https://github.com/KubaDomagala/reader/commit/d77e6039e13b0425a36f6e1117c0477007
 ![map_content_type on own coverage tool img2](readme_imgs/map_content_type_own_coverage_tool_2.png)
 
 The coverage tool can be run by using pytest -s tests/test_parser.py
+
+<Group 69 - Caio Miranda Haschelevici>
   
   <Function 1 - hungarian.py>
 
@@ -184,9 +186,8 @@ there were simply no tests made for map_content_type, causing in a branch covera
 However, since I have added tests to make sure each branch condition is tested
 and accessed, the branch condition went up to 100%. 
   
-  <Provide a screenshot of the new coverage results>
-  <Caio Miranda Haschelevici>
-
+<Provide a screenshot of the new coverage results>
+<Caio Miranda Haschelevici>
 <Test 1 - hungarian.py>
    <Original cover results:>
    <img src="readme_imgs/header.png"
