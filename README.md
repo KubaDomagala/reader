@@ -58,7 +58,7 @@ RESULTS (BEFORE):
      alt="_build_uri before"
      style="float: left; margin-right: 10px;" />
 
-RESULTS (FINAL, full results can be seen in a file "_build_urllib2_request_coverage.txt")
+RESULTS (FINAL, full results can be seen in a file "_build_urllib2_request_coverage.txt") <br />
   <img src="readme_imgs/_build_urllib2_request_result_cov.png"
      alt="_build_uri final coverage results"
      style="float: left; margin-right: 10px;" />
@@ -94,7 +94,7 @@ RESULTS (BEFORE):
      style="float: left; margin-right: 10px;" />
 
 RESULTS (FINAL, full results can be seen in a file "setup_logging_coverage.txt
-" + the initial results differ from the screenshot as the tests have been rerun in the different order producing a different initial coverage, which was always < 80%)
+" + the initial results differ from the screenshot as the tests have been rerun in the different order producing a different initial coverage, which was always < 80%) <br />
   <img src="readme_imgs/setup_logging_results_coverage.png"
      alt="setup_logging final coverage results"
      style="float: left; margin-right: 10px;" />
@@ -112,13 +112,35 @@ Test 1 - _build_urilib2_request
 Link to the commit with added tests - https://github.com/KubaDomagala/reader/commit/108385f001ee1d6462d8b52357b04410e9d40a48#diff-371d71686903901ab120e582d2ca811179700201f7652353fdc03bc9f0fb9240 (in the file "tests/test_reader__vendor_feedparser_urls.py", function "test_build_urllib2_request()")
 
 <Provide a screenshot of the old coverage results (the same as you already showed above)>
+BEFORE (function itself):
   <img src="readme_imgs/_build_coverage_before_official.png"
      alt="_build_uri coverage before official"
      style="float: left; margin-right: 10px;" />
+     
+(function coverage %)
+  <img src="readme_imgs/_build_before_fun.png"
+     alt="_build_uri coverage before official fun"
+     style="float: left; margin-right: 10px;" />
+
+(file coverage %)
+  <img src="readme_imgs/_build_before_file.png"
+     alt="_build_uri coverage before official file"
+     style="float: left; margin-right: 10px;" />
 
 <Provide a screenshot of the new coverage results>
+AFTER (function itself):
   <img src="readme_imgs/_build_coverage_after_official.png"
      alt="_build_uri coverage after official"
+     style="float: left; margin-right: 10px;" />
+
+(function coverage %)
+  <img src="readme_imgs/_build_after_fun.png"
+     alt="_build_uri coverage after official fun"
+     style="float: left; margin-right: 10px;" />
+
+(file coverage %)
+  <img src="readme_imgs/_build_after_file.png"
+     alt="_build_uri coverage after official file"
      style="float: left; margin-right: 10px;" />
 
 <State the coverage improvement with a number and elaborate on why the coverage is improved>
@@ -129,16 +151,38 @@ Test 2 - setup_logging
 Link to the commit with added tests https://github.com/KubaDomagala/reader/commit/189b4a84e784f5feb72056ff9b0a6b2cace8c683#diff-4e8715c7a425ee52e74b7df4d34efd32e8c92f3e60bd51bc2e1ad5943b82032e (in the file "tests/test_cli.py" function "test_cli_setup_logging") + modification here (same file and function) - https://github.com/KubaDomagala/reader/commit/108385f001ee1d6462d8b52357b04410e9d40a48#diff-4e8715c7a425ee52e74b7df4d34efd32e8c92f3e60bd51bc2e1ad5943b82032e
 
 <Provide the same kind of information provided for Test 1>
+BEFORE (function ifself:)
   <img src="readme_imgs/setup_logging_before_official.png"
      alt="setup_logging before official"
      style="float: left; margin-right: 10px;" />
+     
+(function coverage %)
+  <img src="readme_imgs/setup_before_fun.png"
+     alt="setup_logging before official fun"
+     style="float: left; margin-right: 10px;" />
+     
+(file coverage %)
+  <img src="readme_imgs/setup_before_file.png"
+     alt="setup_logging before official file"
+     style="float: left; margin-right: 10px;" />
 
 <Provide a screenshot of the new coverage results>
+  AFTER (function itself):
   <img src="readme_imgs/setup_logging_cov_after_official.png"
      alt="setup_logging coverage after official"
      style="float: left; margin-right: 10px;" />
 
-The coverage of the function has improved from 60% to 100% (branch coverage) and from 
+(function coverage %)
+  <img src="readme_imgs/setup_after_fun.png"
+     alt="setup_logging after official fun"
+     style="float: left; margin-right: 10px;" />
+     
+(file coverage %)
+  <img src="readme_imgs/setup_after_file.png"
+     alt="setup_logging after official file"
+     style="float: left; margin-right: 10px;" />
+
+The coverage of the function has improved from 60% to 100% (branch coverage) and from 65% to 100% (code coverage)
 
 ### Overall
 
