@@ -25,7 +25,7 @@ Usage: The tool was used by following the guide on the contribute page of the pr
   (tests in between that were skipped in the screenshots)
   <img src="readme_imgs/coverage_tool_run_2.png"
    alt="Coverage 2 before"
-   style="float: left; margin-right: 10px;" />
+   style="float: left; margin-right: 10px;" />S
 
 ### Your own coverage tool
 
@@ -34,8 +34,6 @@ Usage: The tool was used by following the guide on the contribute page of the pr
 <Group 69 - Yves Mangano>
 
 <Function 1 - _is_base64>
-
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
 
 https://github.com/KubaDomagala/reader/commit/92fcd2ff30c1292d1ed557ab4cf23a8ea9cd9fc6#diff-0b5c7ce5afcc43bab73a6f39f273da57a5f004f1a89da9c8361a84442ee0217d
 
@@ -70,6 +68,74 @@ https://github.com/KubaDomagala/reader/commit/d77e6039e13b0425a36f6e1117c0477007
 ![map_content_type on own coverage tool img2](readme_imgs/map_content_type_own_coverage_tool_2.png)
 
 The coverage tool can be run by using pytest -s tests/test_parser.py
+  
+  <Function 1 - hungarian.py>
+
+   <Original cover results:>
+   <img src="readme_imgs/header.png"
+   alt="Coverage header"
+   style="float: left; margin-right: 10px;" />
+   <img src="readme_imgs/Hungarian&Greek.png"
+   alt="Coverage hungarian and asctime before"
+   style="float: left; margin-right: 10px;" />
+
+   <Original code:>
+   <img src="readme_imgs/hungarianOriginal1.png"
+   alt="hungarian original code 1"
+   style="float: left; margin-right: 10px;" />
+   <img src="readme_imgs/hungarianOG2.png"
+   alt= "hungarian original code 2"
+   style="float: left; margin-right: 10px;" />
+     
+   <Changed code to make coverage tool>
+   <img src="readme_imgs/hungarianNew1.png"
+   alt="hungarian new code 1"
+   style="float: left; margin-right: 10px;" />
+   <img src="readme_imgs/HungarianNew2.png"
+   alt="hungarian new code 2"
+   style="float: left; margin-right: 10px;" />
+   <img src="readme_imgs/HungarianNew3.png"
+   alt="hungarian new code 3"
+   style="float: left; margin-right: 10px;" />
+
+   <Own coverage tool results with own tests:>
+   <img src="readme_imgs/hungarianResults.png"
+   alt="hungarian own test results"
+   style="float: left; margin-right: 10px;" />
+
+<Function 2 - asctime.py>
+
+   <Original cover results:>
+   <img src="readme_imgs/header.png"
+   alt="Coverage 2 before"
+   style="float: left; margin-right: 10px;" />
+   <img src="readme_imgs/Hungarian&Greek.png"
+   alt="Coverage 2 before"
+   style="float: left; margin-right: 10px;" />
+
+   <Original code:>
+   <img src="readme_imgs/AsctimeOG1.png"
+   alt="asctime original code 1"
+   style="float: left; margin-right: 10px;" />
+   <img src="readme_imgs/AsctimeOG2.png"
+   alt= "asctime original code 2"
+   style="float: left; margin-right: 10px;" />
+
+   <Changed code to make coverage tool>
+   <img src="readme_imgs/AsctimeNew1.png"
+   alt="asctime new code 1"
+   style="float: left; margin-right: 10px;" />
+   <img src="readme_imgs/AsctimeNew2.png"
+   alt="asctime new code 2"
+   style="float: left; margin-right: 10px;" />
+   <img src="readme_imgs/AsctimeNew3.png"
+   alt="asctime new code 3"
+   style="float: left; margin-right: 10px;" />
+
+   <Own coverage tool results with own tests:>
+   <img src="readme_imgs/AsctimeResults.png"
+   alt="asctime own test results"
+   style="float: left; margin-right: 10px;" />
 
 ## Coverage improvement
 
@@ -78,18 +144,13 @@ The coverage tool can be run by using pytest -s tests/test_parser.py
 <The following is supposed to be repeated for each group member>
 
 <Group 69 - Yves Mangano>
-
 <Test 1>
-
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the new/enhanced test>
-
+  
 https://github.com/KubaDomagala/reader/commit/92fcd2ff30c1292d1ed557ab4cf23a8ea9cd9fc6#diff-237d6caeea59e3cf8f303958b4b29e752861048496a047a6af38a12915a02e32
 
 <Provide a screenshot of the old coverage results (the same as you already showed above)>
 
 ![IMG1 old results](readme_imgs/_is_base64_old_coverage_results.png)
-
-<Provide a screenshot of the new coverage results>
 
 ![IMG1 new results](readme_imgs/_is_base64_new_coverage_results_1.png)
 ![IMG2 new results](readme_imgs/_is_base64_new_coverage_results_2.png)
@@ -122,6 +183,56 @@ The coverage for function map_content_type improved from 0% to 100%. This is bec
 there were simply no tests made for map_content_type, causing in a branch coverage of 0%.
 However, since I have added tests to make sure each branch condition is tested
 and accessed, the branch condition went up to 100%. 
+  
+  <Provide a screenshot of the new coverage results>
+  <Caio Miranda Haschelevici>
+
+<Test 1 - hungarian.py>
+   <Original cover results:>
+   <img src="readme_imgs/header.png"
+   alt="Coverage 2 before"
+   style="float: left; margin-right: 10px;" />
+   <img src="readme_imgs/Hungarian&Greek.png"
+   alt="Coverage 2 before"
+   style="float: left; margin-right: 10px;" />
+
+   <New tests:>
+   <img src="readme_imgs/newtestshung.png"
+   alt="new test for hungarian.py"
+   style="float: left; margin-right: 10px;" />
+   <New covarage results:>
+   <img src="readme_imgs/header.png"
+   alt="Coverage 2 before"
+   style="float: left; margin-right: 10px;" />
+   <img src="readme_imgs/newcoverageresults.png"
+   alt="Coverage 2 before"
+   style="float: left; margin-right: 10px;" />
+
+   <Overall we saw an improvement in coverage of 16% the main reason from this can be found when looking at the initial report generated by the coverage tool used. From what it shows the main reason for this low coverage where that the tests used always made the conditions on the if statement always true or false. Therefore, coverage wasnt very high due to the branch conditions not being checked by any individual test. My test checks each branch condition when its true or false thus determining if the branches would work properly during operation. Thus, increasing the coverage by 16%. It is also important to note that the functions coverage didnt increase further due to the inclusion of my own coverage tool into the function. The inclusion of this tool into the function itself caused alot of statements to go unused as they are exclusive statements to my own coverage tool. For example the area with tests for my own coverage tool.>
+     
+<Test 2 - asctime.py>
+   <Original cover results:>
+   <img src="readme_imgs/header.png"
+   alt="Coverage 2 before"
+   style="float: left; margin-right: 10px;" />
+   <img src="readme_imgs/Hungarian&Greek.png"
+   alt="Coverage 2 before"
+   style="float: left; margin-right: 10px;" />
+
+   <New tests:>
+   <img src="readme_imgs/newtestsasc.png"
+   alt="new test for asctime.py"
+   style="float: left; margin-right: 10px;" />
+
+   <New covarage results:>
+   <img src="readme_imgs/header.png"
+   alt="Coverage 2 before"
+   style="float: left; margin-right: 10px;" />
+   <img src="readme_imgs/newcoverageresults.png"
+   alt="Coverage 2 before"
+   style="float: left; margin-right: 10px;" />
+
+   <Overall we saw an improvement in coverage of 17%, we saw this improvements because of a similar reason as the previous test. Just like in the previous case we had a low initial coverage because certain branches where either always true or always false with the pre-exisiting tests. However, the tests I added ensure that either case of every branch is tested and therefore we had an increase in the overall coverage of this function by 17%. Just like in the rpevious test case, it is important to note that due to the inclusion of my own coverage tool into the function, the coverage wasnt able to be higher. This is due to the fact that certain areas of the code where exclusive to my coverage tool and therefore not tested. Thus, hampering the overall coverage>
 
 ### Overall
 
