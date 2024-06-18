@@ -204,7 +204,7 @@ Test 1 - hungarian.py
    <img src="readme_imgs/header.png"
    alt="Coverage 2 before"
    style="float: left; margin-right: 10px;" />
-   <img src="readme_imgs/newcoverageresults.png"
+   <img src="readme_imgs/correcthun&ascfinal.png"
    alt="Coverage 2 before"
    style="float: left; margin-right: 10px;" />
 
@@ -228,7 +228,7 @@ Test 2 - asctime.py
    <img src="readme_imgs/header.png"
    alt="Coverage 2 before"
    style="float: left; margin-right: 10px;" />
-   <img src="readme_imgs/newcoverageresults.png"
+   <img src="readme_imgs/correcthun&ascfinal.png"
    alt="Coverage 2 before"
    style="float: left; margin-right: 10px;" />
 
