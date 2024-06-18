@@ -99,7 +99,7 @@ Function 1 - hungarian.py
    style="float: left; margin-right: 10px;" />
 
    <Own coverage tool results with own tests:>
-   <img src="readme_imgs/hungarianResults.png"
+   <img src="readme_imgs/correcthungarianres.png"
    alt="hungarian own test results"
    style="float: left; margin-right: 10px;" />
 
