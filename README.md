@@ -122,18 +122,18 @@ Function 2 - asctime.py
    style="float: left; margin-right: 10px;" />
 
    <Changed code to make coverage tool>
-   <img src="readme_imgs/AsctimeNew1.png"
+   <img src="readme_imgs/correctAsc1.png"
    alt="asctime new code 1"
    style="float: left; margin-right: 10px;" />
-   <img src="readme_imgs/AsctimeNew2.png"
+   <img src="readme_imgs/correctAsc2.png"
    alt="asctime new code 2"
    style="float: left; margin-right: 10px;" />
-   <img src="readme_imgs/AsctimeNew3.png"
+   <img src="readme_imgs/correctAsc3.png"
    alt="asctime new code 3"
    style="float: left; margin-right: 10px;" />
 
    <Own coverage tool results with own tests:>
-   <img src="readme_imgs/AsctimeResults.png"
+   <img src="readme_imgs/correctAscres.png"
    alt="asctime own test results"
    style="float: left; margin-right: 10px;" />
 
