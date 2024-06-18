@@ -88,13 +88,13 @@ Function 1 - hungarian.py
    style="float: left; margin-right: 10px;" />
      
    <Changed code to make coverage tool>
-   <img src="readme_imgs/hungarianNew1.png"
+   <img src="readme_imgs/correcthungarian1.png"
    alt="hungarian new code 1"
    style="float: left; margin-right: 10px;" />
-   <img src="readme_imgs/HungarianNew2.png"
+   <img src="readme_imgs/newhungarian2.png"
    alt="hungarian new code 2"
    style="float: left; margin-right: 10px;" />
-   <img src="readme_imgs/HungarianNew3.png"
+   <img src="readme_imgs/newhungarian3.png"
    alt="hungarian new code 3"
    style="float: left; margin-right: 10px;" />
 
