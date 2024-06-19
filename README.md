@@ -227,6 +227,7 @@ However, since I have added tests to make sure each branch condition is tested
 and accessed, the branch condition went up to 100%. 
 
 Test 2
+https://github.com/KubaDomagala/reader/commit/92fcd2ff30c1292d1ed557ab4cf23a8ea9cd9fc6#diff-237d6caeea59e3cf8f303958b4b29e752861048496a047a6af38a12915a02e32
 
 ![IMG1 old results](readme_imgs/map_content_type_old_coverage_results.png)
 ![IMG1 new results](readme_imgs/map_content_type_new_coverage_results_1.png)
