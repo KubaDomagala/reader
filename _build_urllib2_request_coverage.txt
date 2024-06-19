@@ -1,0 +1,133 @@
+_build_urllib2_request_branch_1, hit: False
+_build_urllib2_request_branch_2, hit: False
+_build_urllib2_request_branch_3, hit: False
+_build_urllib2_request_branch_4, hit: False
+_build_urllib2_request_branch_5, hit: False
+_build_urllib2_request_branch_6, hit: False
+_build_urllib2_request_branch_7, hit: False
+_build_urllib2_request_branch_8, hit: False
+_build_urllib2_request_branch_9, hit: False
+_build_urllib2_request_branch_10, hit: False
+_build_urllib2_request_branch_11, hit: False
+_build_urllib2_request_branch_12, hit: False
+_build_urllib2_request_branch_13, hit: False
+
+
+_build_urllib2_request_branch_1, hit: False
+_build_urllib2_request_branch_2, hit: True
+_build_urllib2_request_branch_3, hit: False
+_build_urllib2_request_branch_4, hit: False
+_build_urllib2_request_branch_5, hit: True
+_build_urllib2_request_branch_6, hit: False
+_build_urllib2_request_branch_7, hit: True
+_build_urllib2_request_branch_8, hit: False
+_build_urllib2_request_branch_9, hit: True
+_build_urllib2_request_branch_10, hit: False
+_build_urllib2_request_branch_11, hit: True
+_build_urllib2_request_branch_12, hit: False
+_build_urllib2_request_branch_13, hit: True
+
+
+_build_urllib2_request_branch_1, hit: False
+_build_urllib2_request_branch_2, hit: True
+_build_urllib2_request_branch_3, hit: False
+_build_urllib2_request_branch_4, hit: False
+_build_urllib2_request_branch_5, hit: True
+_build_urllib2_request_branch_6, hit: False
+_build_urllib2_request_branch_7, hit: True
+_build_urllib2_request_branch_8, hit: False
+_build_urllib2_request_branch_9, hit: True
+_build_urllib2_request_branch_10, hit: False
+_build_urllib2_request_branch_11, hit: True
+_build_urllib2_request_branch_12, hit: False
+_build_urllib2_request_branch_13, hit: True
+
+
+_build_urllib2_request_branch_1, hit: True
+_build_urllib2_request_branch_2, hit: True
+_build_urllib2_request_branch_3, hit: False
+_build_urllib2_request_branch_4, hit: False
+_build_urllib2_request_branch_5, hit: True
+_build_urllib2_request_branch_6, hit: False
+_build_urllib2_request_branch_7, hit: True
+_build_urllib2_request_branch_8, hit: False
+_build_urllib2_request_branch_9, hit: True
+_build_urllib2_request_branch_10, hit: False
+_build_urllib2_request_branch_11, hit: True
+_build_urllib2_request_branch_12, hit: False
+_build_urllib2_request_branch_13, hit: True
+
+
+_build_urllib2_request_branch_1, hit: True
+_build_urllib2_request_branch_2, hit: True
+_build_urllib2_request_branch_3, hit: True
+_build_urllib2_request_branch_4, hit: False
+_build_urllib2_request_branch_5, hit: True
+_build_urllib2_request_branch_6, hit: False
+_build_urllib2_request_branch_7, hit: True
+_build_urllib2_request_branch_8, hit: False
+_build_urllib2_request_branch_9, hit: True
+_build_urllib2_request_branch_10, hit: False
+_build_urllib2_request_branch_11, hit: True
+_build_urllib2_request_branch_12, hit: False
+_build_urllib2_request_branch_13, hit: True
+
+
+_build_urllib2_request_branch_1, hit: True
+_build_urllib2_request_branch_2, hit: True
+_build_urllib2_request_branch_3, hit: True
+_build_urllib2_request_branch_4, hit: True
+_build_urllib2_request_branch_5, hit: True
+_build_urllib2_request_branch_6, hit: True
+_build_urllib2_request_branch_7, hit: True
+_build_urllib2_request_branch_8, hit: False
+_build_urllib2_request_branch_9, hit: True
+_build_urllib2_request_branch_10, hit: False
+_build_urllib2_request_branch_11, hit: True
+_build_urllib2_request_branch_12, hit: False
+_build_urllib2_request_branch_13, hit: True
+
+
+_build_urllib2_request_branch_1, hit: True
+_build_urllib2_request_branch_2, hit: True
+_build_urllib2_request_branch_3, hit: True
+_build_urllib2_request_branch_4, hit: True
+_build_urllib2_request_branch_5, hit: True
+_build_urllib2_request_branch_6, hit: True
+_build_urllib2_request_branch_7, hit: True
+_build_urllib2_request_branch_8, hit: True
+_build_urllib2_request_branch_9, hit: True
+_build_urllib2_request_branch_10, hit: False
+_build_urllib2_request_branch_11, hit: True
+_build_urllib2_request_branch_12, hit: False
+_build_urllib2_request_branch_13, hit: True
+
+
+_build_urllib2_request_branch_1, hit: True
+_build_urllib2_request_branch_2, hit: True
+_build_urllib2_request_branch_3, hit: True
+_build_urllib2_request_branch_4, hit: True
+_build_urllib2_request_branch_5, hit: True
+_build_urllib2_request_branch_6, hit: True
+_build_urllib2_request_branch_7, hit: True
+_build_urllib2_request_branch_8, hit: True
+_build_urllib2_request_branch_9, hit: True
+_build_urllib2_request_branch_10, hit: True
+_build_urllib2_request_branch_11, hit: True
+_build_urllib2_request_branch_12, hit: False
+_build_urllib2_request_branch_13, hit: True
+
+
+_build_urllib2_request_branch_1, hit: True
+_build_urllib2_request_branch_2, hit: True
+_build_urllib2_request_branch_3, hit: True
+_build_urllib2_request_branch_4, hit: True
+_build_urllib2_request_branch_5, hit: True
+_build_urllib2_request_branch_6, hit: True
+_build_urllib2_request_branch_7, hit: True
+_build_urllib2_request_branch_8, hit: True
+_build_urllib2_request_branch_9, hit: True
+_build_urllib2_request_branch_10, hit: True
+_build_urllib2_request_branch_11, hit: True
+_build_urllib2_request_branch_12, hit: True
+_build_urllib2_request_branch_13, hit: True

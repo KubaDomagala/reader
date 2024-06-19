@@ -51,17 +51,7 @@ in the middle so it might be a little bit hard to find. However, it will show th
 exact same output.
 
 Function 2 - map_content_type
-
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
-
-https://github.com/KubaDomagala/reader/commit/92fcd2ff30c1292d1ed557ab4cf23a8ea9cd9fc6#diff-0b5c7ce5afcc43bab73a6f39f273da57a5f004f1a89da9c8361a84442ee0217d
-
-And
-
-https://github.com/KubaDomagala/reader/commit/d77e6039e13b0425a36f6e1117c047700779896d
-
-<Provide a screenshot of the coverage results output by the instrumentation>
-
+  
 ![map_content_type on own coverage tool img1](readme_imgs/map_content_type_own_coverage_tool_1.png)
 
 ![map_content_type on own coverage tool img2](readme_imgs/map_content_type_own_coverage_tool_2.png)
@@ -136,6 +126,81 @@ Function 2 - asctime.py
    <img src="readme_imgs/correctAscres.png"
    alt="asctime own test results"
    style="float: left; margin-right: 10px;" />
+     
+Group 69 - Kuba Domagala <br />
+Function 1 - _build_urilib2_request
+  
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
+Link to the commit with the changed code of the function(_vendor/feedparser/http.py file) - https://github.com/KubaDomagala/reader/commit/108385f001ee1d6462d8b52357b04410e9d40a48#diff-c55ed7a611ef230781c2cab96ac3fb2fba6468e7b2e92d0a9abe2b49f6ebaf08
+(The results can also be seen in the commit in the file "_build_urllib2_request_coverage.txt" )
+Link to the update of the modification - https://github.com/KubaDomagala/reader/commit/ad3b7296bda99e7e16bd29c0651d3bcb7fd29aa7
+
+CODE (BEFORE):
+  <img src="readme_imgs/_build_before.png"
+     alt="_build_uri before"
+     style="float: left; margin-right: 10px;" />
+
+CODE (AFTER): <br />
+  <img src="readme_imgs/_build_after_1.png"
+   alt="_build_uri after 1"
+   style="float: left; margin-right: 10px;" />
+
+  <img src="readme_imgs/_build_after_2.png"
+   alt="_build_uri after 2"
+   style="float: left; margin-right: 10px;" />
+
+https://github.com/KubaDomagala/reader/commit/92fcd2ff30c1292d1ed557ab4cf23a8ea9cd9fc6#diff-0b5c7ce5afcc43bab73a6f39f273da57a5f004f1a89da9c8361a84442ee0217d
+
+And
+
+https://github.com/KubaDomagala/reader/commit/d77e6039e13b0425a36f6e1117c047700779896d
+
+<Provide a screenshot of the coverage results output by the instrumentation>
+RESULTS (BEFORE):
+  <img src="readme_imgs/coverage_measure_before_tests__build.png"
+     alt="_build_uri before"
+     style="float: left; margin-right: 10px;" />
+
+RESULTS (FINAL, full results can be seen in a file "_build_urllib2_request_coverage.txt") <br />
+  <img src="readme_imgs/_build_urllib2_request_result_cov.png"
+     alt="_build_uri final coverage results"
+     style="float: left; margin-right: 10px;" />
+  
+Function 2 - setup_logging
+
+<Provide the same kind of information provided for Function 1>
+Link to the 1st commit with the coverage changes - https://github.com/KubaDomagala/reader/commit/189b4a84e784f5feb72056ff9b0a6b2cace8c683 (in the file "src/reader_cli.py")
+2nd part of the coverage changes - https://github.com/KubaDomagala/reader/commit/108385f001ee1d6462d8b52357b04410e9d40a48#diff-ae4c294e1304214c4dc7860dfb07bbf702d59f952cf157ea705cf22b1e134244 (in the file in the file "src/reader_cli.py")
+
+CODE (BEFORE):
+  <img src="readme_imgs/setup_logging_before_1.png"
+     alt="setup_logging code before 1"
+     style="float: left; margin-right: 10px;" />
+
+  <img src="readme_imgs/setup_logging_before_2.png"
+     alt="setup_logging code before 2"
+     style="float: left; margin-right: 10px;" />
+
+CODE (AFTER):
+  <img src="readme_imgs/setup_logging_after_1.png"
+     alt="setup_logging code after 1"
+     style="float: left; margin-right: 10px;" />
+
+  <img src="readme_imgs/setup_logging_after_2.png"
+     alt="setup_logging code after 2"
+     style="float: left; margin-right: 10px;" />
+
+
+RESULTS (BEFORE): <br />
+  <img src="readme_imgs/coverage_measure_before_tests_logging.png"
+     alt="setup_logging coverage before"
+     style="float: left; margin-right: 10px;" />
+
+RESULTS (FINAL, full results can be seen in a file "setup_logging_coverage.txt
+" + the initial results differ from the screenshot as the tests have been rerun in the different order producing a different initial coverage, which was always < 80%) <br />
+  <img src="readme_imgs/setup_logging_results_coverage.png"
+     alt="setup_logging final coverage results"
+     style="float: left; margin-right: 10px;" />
 
 ## Coverage improvement
 
@@ -164,20 +229,9 @@ and accessed, the branch condition went up to 100%.
 
 Test 2
 
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the new/enhanced test>
-
-https://github.com/KubaDomagala/reader/commit/92fcd2ff30c1292d1ed557ab4cf23a8ea9cd9fc6#diff-237d6caeea59e3cf8f303958b4b29e752861048496a047a6af38a12915a02e32
-
-<Provide a screenshot of the old coverage results (the same as you already showed above)>
-
 ![IMG1 old results](readme_imgs/map_content_type_old_coverage_results.png)
-
-<Provide a screenshot of the new coverage results>
-
 ![IMG1 new results](readme_imgs/map_content_type_new_coverage_results_1.png)
 ![IMG2 new results](readme_imgs/map_content_type_new_coverage_results_2.png)
-
-<State the coverage improvement with a number and elaborate on why the coverage is improved>
 
 The coverage for function map_content_type improved from 0% to 100%. This is because
 there were simply no tests made for map_content_type, causing in a branch coverage of 0%.
@@ -234,6 +288,87 @@ Test 2 - asctime.py
 
    Overall we saw an improvement in coverage of 17%, we saw this improvements because of a similar reason as the previous test. Just like in the previous case we had a low initial coverage because certain branches where either always true or always false with the pre-exisiting tests. However, the tests I added ensure that either case of every branch is tested and therefore we had an increase in the overall coverage of this function by 17%. Just like in the rpevious test case, it is important to note that due to the inclusion of my own coverage tool into the function, the coverage wasnt able to be higher. This is due to the fact that certain areas of the code where exclusive to my coverage tool and therefore not tested. Thus, hampering the overall coverage
 
+     Kuba Domagala <br />
+Test 1 - _build_urilib2_request
+  
+<Show a patch (diff) or a link to a commit made in your forked repository that shows the new/enhanced test>
+Link to the commit with added tests - https://github.com/KubaDomagala/reader/commit/108385f001ee1d6462d8b52357b04410e9d40a48#diff-371d71686903901ab120e582d2ca811179700201f7652353fdc03bc9f0fb9240 (in the file "tests/test_reader__vendor_feedparser_urls.py", function "test_build_urllib2_request()")
+
+https://github.com/KubaDomagala/reader/commit/92fcd2ff30c1292d1ed557ab4cf23a8ea9cd9fc6#diff-237d6caeea59e3cf8f303958b4b29e752861048496a047a6af38a12915a02e32
+
+<Provide a screenshot of the old coverage results (the same as you already showed above)>
+BEFORE (function itself):
+  <img src="readme_imgs/_build_coverage_before_official.png"
+     alt="_build_uri coverage before official"
+     style="float: left; margin-right: 10px;" />
+
+(function coverage %)
+  <img src="readme_imgs/_build_before_fun.png"
+     alt="_build_uri coverage before official fun"
+     style="float: left; margin-right: 10px;" />
+
+(file coverage %) <br />
+  <img src="readme_imgs/_build_before_file.png"
+     alt="_build_uri coverage before official file"
+     style="float: left; margin-right: 10px;" />
+
+<Provide a screenshot of the new coverage results>
+AFTER (function itself):
+  <img src="readme_imgs/_build_coverage_after_official.png"
+     alt="_build_uri coverage after official"
+     style="float: left; margin-right: 10px;" />
+
+(function coverage %)
+  <img src="readme_imgs/_build_after_fun.png"
+     alt="_build_uri coverage after official fun"
+     style="float: left; margin-right: 10px;" />
+
+(file coverage %)
+  <img src="readme_imgs/_build_after_file.png"
+     alt="_build_uri coverage after official file"
+     style="float: left; margin-right: 10px;" />
+
+<State the coverage improvement with a number and elaborate on why the coverage is improved>
+The coverage of the function has improved from 0% to 100% in both code and branch coverage. This is because no tests have existed for that specific function and no already existing test used the functionality of that function. The coverage has improved as I added extensive tests that check every branch for that function that have not existed before.
+
+Test 2 - setup_logging
+Link to the commit with added tests https://github.com/KubaDomagala/reader/commit/189b4a84e784f5feb72056ff9b0a6b2cace8c683#diff-4e8715c7a425ee52e74b7df4d34efd32e8c92f3e60bd51bc2e1ad5943b82032e (in the file "tests/test_cli.py" function "test_cli_setup_logging") + modification here (same file and function) - https://github.com/KubaDomagala/reader/commit/108385f001ee1d6462d8b52357b04410e9d40a48#diff-4e8715c7a425ee52e74b7df4d34efd32e8c92f3e60bd51bc2e1ad5943b82032e
+
+<Provide the same kind of information provided for Test 1>
+BEFORE (function ifself:)
+  <img src="readme_imgs/setup_logging_before_official.png"
+     alt="setup_logging before official"
+     style="float: left; margin-right: 10px;" />
+
+(function coverage %)
+  <img src="readme_imgs/setup_before_fun.png"
+     alt="setup_logging before official fun"
+     style="float: left; margin-right: 10px;" />
+
+(file coverage %) <br />
+  <img src="readme_imgs/setup_before_file.png"
+     alt="setup_logging before official file"
+     style="float: left; margin-right: 10px;" />
+
+<Provide a screenshot of the new coverage results>
+  AFTER (function itself):
+  <img src="readme_imgs/setup_logging_cov_after_official.png"
+     alt="setup_logging coverage after official"
+     style="float: left; margin-right: 10px;" />
+
+(function coverage %)
+  <img src="readme_imgs/setup_after_fun.png"
+     alt="setup_logging after official fun"
+     style="float: left; margin-right: 10px;" />
+
+(file coverage %) <br />
+  <img src="readme_imgs/setup_after_file.png"
+     alt="setup_logging after official file"
+     style="float: left; margin-right: 10px;" />
+
+The coverage of the function has improved from 60% to 100% (branch coverage) and from 65% to 100% (code coverage)
+
+
 ### Overall
 
 <Provide a screenshot of the old coverage results by running an existing tool (the same as you already showed above)>
@@ -243,7 +378,6 @@ Test 2 - asctime.py
 ## Statement of individual contributions
 
 <Write what each group member did>
-
 Group 69 - Yves Mangano
 
 I worked on the functions _is_base64 and map_content_type. I made my own coverage
@@ -260,3 +394,11 @@ also "./run.sh coverage-all", and I've provided an example of the tests I've mad
 for my teammates to help understand how they can test their functions.
 Especially since _is_base64 function is a method from a class, it is harder to test, 
 but I managed how to and set an example for the group doing this.
+
+  
+Kuba Domagala
+I worked on the functions _build_urilib2_request and setup_logging. I made my own coverage tool where the branch coverage can be shown by opening the respective files created in the main root of the project (first entry is the before the added tests, everything else is after).
+
+I increased the coverage of these functions to 100% in their respective files, enhancing the coverage of the project and making sure that all of the branches are accessed and their results are as expected.
+
+Additionally I was responsible for merging all of the pull requests and general organisation of the work. I was the one who found the repository that we are using in the assingment and made sure that everyone was able to run things correctly, so that we could start working.
