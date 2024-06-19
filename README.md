@@ -51,6 +51,11 @@ in the middle so it might be a little bit hard to find. However, it will show th
 exact same output.
 
 Function 2 - map_content_type
+https://github.com/KubaDomagala/reader/commit/92fcd2ff30c1292d1ed557ab4cf23a8ea9cd9fc6#diff-0b5c7ce5afcc43bab73a6f39f273da57a5f004f1a89da9c8361a84442ee0217d
+
+And
+
+https://github.com/KubaDomagala/reader/commit/d77e6039e13b0425a36f6e1117c047700779896d
   
 ![map_content_type on own coverage tool img1](readme_imgs/map_content_type_own_coverage_tool_1.png)
 
@@ -148,12 +153,6 @@ CODE (AFTER): <br />
   <img src="readme_imgs/_build_after_2.png"
    alt="_build_uri after 2"
    style="float: left; margin-right: 10px;" />
-
-https://github.com/KubaDomagala/reader/commit/92fcd2ff30c1292d1ed557ab4cf23a8ea9cd9fc6#diff-0b5c7ce5afcc43bab73a6f39f273da57a5f004f1a89da9c8361a84442ee0217d
-
-And
-
-https://github.com/KubaDomagala/reader/commit/d77e6039e13b0425a36f6e1117c047700779896d
 
 <Provide a screenshot of the coverage results output by the instrumentation>
 RESULTS (BEFORE):
@@ -288,7 +287,7 @@ Test 2 - asctime.py
 
    Overall we saw an improvement in coverage of 17%, we saw this improvements because of a similar reason as the previous test. Just like in the previous case we had a low initial coverage because certain branches where either always true or always false with the pre-exisiting tests. However, the tests I added ensure that either case of every branch is tested and therefore we had an increase in the overall coverage of this function by 17%. Just like in the rpevious test case, it is important to note that due to the inclusion of my own coverage tool into the function, the coverage wasnt able to be higher. This is due to the fact that certain areas of the code where exclusive to my coverage tool and therefore not tested. Thus, hampering the overall coverage
 
-     Kuba Domagala <br />
+Kuba Domagala <br />
 Test 1 - _build_urilib2_request
   
 <Show a patch (diff) or a link to a commit made in your forked repository that shows the new/enhanced test>
@@ -396,7 +395,7 @@ Especially since _is_base64 function is a method from a class, it is harder to t
 but I managed how to and set an example for the group doing this.
 
   
-Kuba Domagala
+Kuba Domagala <br />
 I worked on the functions _build_urilib2_request and setup_logging. I made my own coverage tool where the branch coverage can be shown by opening the respective files created in the main root of the project (first entry is the before the added tests, everything else is after).
 
 I increased the coverage of these functions to 100% in their respective files, enhancing the coverage of the project and making sure that all of the branches are accessed and their results are as expected.
