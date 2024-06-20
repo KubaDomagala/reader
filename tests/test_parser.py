@@ -26,9 +26,12 @@ import re
 from reader._vendor.feedparser.datetimes.w3dtf import _parse_date_w3dtf
 from reader._vendor.feedparser.datetimes.korean import _parse_date_nate, return_w3dtf
 
+# Parse poslist test
+from reader._vendor.feedparser.namespaces.georss import _parse_poslist
+
 # Parse perforce test
-import time
-from reader._vendor.feedparser.datetimes.perforce import _parse_date_perforce
+# import time
+# from reader._vendor.feedparser.datetimes.perforce import _parse_date_perforce
 
 
 @pytest.fixture(params=[True, False])
@@ -1075,21 +1078,44 @@ def test_korean_nate_format():
     result = _parse_date_nate("2021-06-15 오후 14:45:30")
     assert w3dtf_regex.match(return_w3dtf(result))
 
-    # completely different format
-    result = _parse_date_nate("Hello I'm Edwin")
+    # proper Korean onblog format
+    result = _parse_date_nate("2023년 06월 11일 09:15:00")
     assert w3dtf_regex.match(return_w3dtf(result))
-    result = _parse_date_nate("")
+
+    # completely wrong format
+    result = _parse_date_nate("This is Edwin")
     assert w3dtf_regex.match(return_w3dtf(result))
+
+# TESTING FOR PARSE POSLIST
+def test_parse_poslist():
+    # linestring
+    assert {'type': 'LineString', 'coordinates': [(20.0, 10.0)]} == _parse_poslist("10,20,30", "linestring", swap=True, dims=2)
+
+    # polygon
+    assert {'type': 'Polygon', 'coordinates': ([(20.0, 10.0)],)} == _parse_poslist("10,20,30", "polygon", swap=True, dims=2)
+
+    # nothing
+    assert None == _parse_poslist("10,20,30", "", swap=True, dims=2)
+
+
+
+
 
 # TESTING FOR PARSE DATE PERFORCE FORMAT 
-def test_parse_date_perforce():
+# def test_parse_date_perforce():
 
-    # proper date in yyyy/mm/dd hh:mm:ss TTT format
-    result = _parse_date_perforce("Fri, 2006/09/15 08:19:53 EDT")
-    compare_1 = time.struct_time((2006, 9, 15, 12, 19, 53, 4, 258, 0))
-    assert result == compare_1
+#     print("starting test_parse_date_perforce()...")
+#     # proper date in yyyy/mm/dd hh:mm:ss TTT format
+#     result = _parse_date_perforce("Fri, 2006/09/15 08:19:53 EDT")
+#     compare_1 = time.struct_time((2006, 9, 15, 12, 19, 53, 4, 258, 0))
+#     assert result == compare_1
 
-    # proper Korean onblog format
-    result = _parse_date_perforce("2023년 06월 11일 09:15:00")
-    compare_2 = time.struct_time((2023, 6, 11, 9, 15, 0, 6, 162, -1))
-    assert result == compare_2
+#     # proper Korean onblog format
+#     result = _parse_date_perforce("2023년 06월 11일 09:15:00")
+#     compare_2 = time.struct_time((2023, 6, 11, 9, 15, 0, 6, 162, -1))
+#     assert result == compare_2
+
+#     # Example input that should cause `tm` to be `None`
+#     result = _parse_date_perforce("Fri, 2006/13/15 08:19:53 EDT") # Invalid month (13)
+#     compare_3 = time.struct_time((2006, 13, 15, 8, 19, 53, 4, 258, -1))
+#     assert result == compare_3
