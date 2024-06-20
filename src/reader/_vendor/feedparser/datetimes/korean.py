@@ -69,9 +69,15 @@ branch_coverage = {
 }
 
 def print_coverage():
+    num_branches = 0
+    hit_branches = 0 
     for branch, hit in branch_coverage.items():
+        if hit: 
+            hit_branches += 1
         print(f"{branch} was {'hit' if hit else 'not hit'}")
-    print("\n")
+        num_branches += 1
+    
+    print(f"Current Branch Coverage: {int(hit_branches/num_branches * 100)}%\n")
 
 
 
@@ -92,14 +98,18 @@ def _parse_date_nate(dateString):
         branch_coverage["parse_data_nate_3"] = True
         hour += 12
 
-    branch_coverage["parse_data_nate_4"] = True
+    # add an else here
+    else:
+        branch_coverage["parse_data_nate_4"] = True
 
     hour = str(hour)
     if len(hour) == 1:
         branch_coverage["parse_data_nate_5"] = True
         hour = '0' + hour
     
-    branch_coverage["parse_data_nate_6"] = True
+    # add and else here
+    else:
+        branch_coverage["parse_data_nate_6"] = True
 
     w3dtfdate = '%(year)s-%(month)s-%(day)sT%(hour)s:%(minute)s:%(second)s%(zonediff)s' % \
                 {
@@ -126,38 +136,21 @@ def return_w3dtf(m):
     return w3dtfdate
 
 
-# if __name__ == '__main__':
-#     w3dtf_regex = re.compile(r'^\d{4}-\d{1,2}-\d{1,2}T\d{1,2}:\d{1,2}:\d{1,2}([+-]\d{2}:\d{2}|Z)$')
+if __name__ == '__main__':
+    w3dtf_regex = re.compile(r'^\d{4}-\d{1,2}-\d{1,2}T\d{1,2}:\d{1,2}:\d{1,2}([+-]\d{2}:\d{2}|Z)$')
     
-#     print("...Staring the _parse_date_nate TEST...")
+    print("...Staring the _parse_date_nate TEST...")
 
-#     # proper Korean nate format
-#     result = _parse_date_nate("2023-06-11 오전 09:15:00")
-#     #print(return_w3dtf(result))
-#     print_coverage()
-#     result = _parse_date_nate("2021-06-15 오후 14:45:30")
-#     print_coverage()
+    # proper Korean nate format
+    result = _parse_date_nate("2023-06-11 오전 09:15:00")
+    print_coverage()
+    result = _parse_date_nate("2021-06-15 오후 14:45:30")
+    print_coverage()
 
-#     # proper Korean onblog format
-#     result = _parse_date_nate("2023년 06월 11일 09:15:00")
-#     print_coverage()
-#     result = _parse_date_nate("2021년 06월 15일 14:45:30")
-#     print_coverage()
+    # proper Korean onblog format
+    result = _parse_date_nate("2023년 06월 11일 09:15:00")
+    print_coverage()
 
-#     # different country format (Greek && Japan)
-#     result = _parse_date_nate("11/06/2023 15:30:45")
-#     print_coverage()
-#     result = _parse_date_nate("2023年06月11日 15時30分45秒")
-#     print_coverage()
-
-#     # Korean nate country format but written wrong
-#     result = _parse_date_nate("2023-6-011 전 009:15:00")
-#     print_coverage()
-#     result = _parse_date_nate("2021/06/15 14:45:30")
-#     print_coverage()
-
-#     # completely different format
-#     result = _parse_date_nate("Hello I'm Edwin")
-#     print_coverage()
-#     result = _parse_date_nate("")
-#     print_coverage()
+    # different format 
+    result = _parse_date_nate("This is Edwin")
+    print_coverage()
