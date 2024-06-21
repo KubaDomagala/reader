@@ -201,6 +201,7 @@ RESULTS (FINAL, full results can be seen in a file "setup_logging_coverage.txt
      alt="setup_logging final coverage results"
      style="float: left; margin-right: 10px;" />
 
+
 Group 69 - Sheng-Wen Chen<br>
 Function 1 - _parse_poslist()<br><br>
 
@@ -440,6 +441,10 @@ but I managed how to and set an example for the group doing this.
 Kuba Domagala <br />
 I worked on the functions _build_urilib2_request and setup_logging. I made my own coverage tool where the branch coverage can be shown by opening the respective files created in the main root of the project (first entry is the before the added tests, everything else is after).
 
+I increased the coverage of these functions to 100% in their respective files, enhancing the coverage of the project and making sure that all of the branches are accessed and their results are as expected.
+
+Additionally I was responsible for merging all of the pull requests and general organisation of the work. I was the one who found the repository that we are using in the assingment and made sure that everyone was able to run things correctly, so that we could start working.
+
 
 Group 69 - Sheng-Wen Chen<br>
 
@@ -448,8 +453,3 @@ I worked on the functions _parse_poslist() and _parse_nate_date(). I made my own
 I increased the branch coverage of _parse_poslist() from 0% to 100%, and the branch coverage of _parse_nate_date() from 0% to 88% enhancing the overall coverage of the project. This was done by creating my own tests in test_parser.py, making sure that each branch is accessed and functions correctly by using assert statements inside of the tests. One of the branche wasn't able to reach after running <code>tox</code>.
 
 Additionally, I was responsible for ensuring the group project was heading in the right direction. For instance, we didn't know that we needed to add an external "else" statement after an "if" statement that did not end with a return, while making the coverage tool. I managed to find this missing implementation and adjusted the working direction of the group.
-
-
-I increased the coverage of these functions to 100% in their respective files, enhancing the coverage of the project and making sure that all of the branches are accessed and their results are as expected.
-
-Additionally I was responsible for merging all of the pull requests and general organisation of the work. I was the one who found the repository that we are using in the assingment and made sure that everyone was able to run things correctly, so that we could start working.
