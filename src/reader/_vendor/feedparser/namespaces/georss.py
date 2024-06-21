@@ -29,7 +29,7 @@
 # Required for Python 3.6 compatibility.
 from __future__ import generator_stop
 
-from ..util import FeedParserDict
+from reader._vendor.feedparser.util import FeedParserDict
 
 
 class Namespace(object):
@@ -164,14 +164,35 @@ class Namespace(object):
 
 # GeoRSS geometry parsers. Each return a dict with 'type' and 'coordinates'
 # items, or None in the case of a parsing error.
+# for coverage test
+branch_coverage = {
+    "_parse_poslist_1": False,
+    "_parse_poslist_2": False,
+    "_parse_poslist_3": False
+}
+
+def print_coverage():
+    num_branches = 0
+    hit_branches = 0 
+    for branch, hit in branch_coverage.items():
+        if hit: 
+            hit_branches += 1
+        print(f"{branch} was {'hit' if hit else 'not hit'}")
+        num_branches += 1
+    
+    print(f"Current Branch Coverage: {int(hit_branches/num_branches * 100)}%\n")
+
 
 def _parse_poslist(value, geom_type, swap=True, dims=2):
     if geom_type == 'linestring':
+        branch_coverage["_parse_poslist_1"] = True
         return _parse_georss_line(value, swap, dims)
     elif geom_type == 'polygon':
+        branch_coverage["_parse_poslist_2"] = True
         ring = _parse_georss_line(value, swap, dims)
         return {'type': 'Polygon', 'coordinates': (ring['coordinates'],)}
     else:
+        branch_coverage["_parse_poslist_3"] = True
         return None
 
 
@@ -274,3 +295,19 @@ _geogCS = [
     4805, 4806, 4807, 4808, 4809, 4810, 4811, 4813, 4814, 4815, 4816, 4817, 4818,
     4819, 4820, 4821, 4823, 4824, 4901, 4902, 4903, 4904, 4979,
 ]
+
+
+
+
+if __name__ == '__main__':
+    result = _parse_poslist("10,20", "linestring", swap=True, dims=2)
+    print_coverage()
+    assert {'type': 'LineString', 'coordinates': [(20.0, 10.0)]} == result
+
+    result = _parse_poslist("10,20", "polygon", swap=True, dims=2)
+    print_coverage()
+    assert {'type': 'Polygon', 'coordinates': ([(20.0, 10.0)],)} == result
+
+    result = _parse_poslist("10,20", "", swap=True, dims=2)
+    print_coverage()
+    assert None == result
