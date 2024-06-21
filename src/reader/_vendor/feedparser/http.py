@@ -105,11 +105,14 @@ branch_coverage = {
 }
 
 def print_coverage__build():
+    count = 0
     with open('_build_urllib2_request_coverage.txt', 'a') as file:
         for branch, hit in branch_coverage.items():
             print(f"{branch}, hit: {hit}", file=file)
+            if hit == True:
+                count += 1
 
-        print("\n", file=file)
+        print(f"Branch coverage: {round(count / len(branch_coverage) * 100, 2)}%\n", file=file)
 
 
 def _build_urllib2_request(url, agent, accept_header, etag, modified, referrer, auth, request_headers):

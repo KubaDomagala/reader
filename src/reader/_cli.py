@@ -498,10 +498,16 @@ branch_coverage = {
 
 def print_coverage_setup_logging():
     with open('setup_logging_coverage.txt', 'a') as file:
+        count = 0
         for branch, hit in branch_coverage.items():
             print(f"{branch}, hit: {hit}", file=file)
+            if hit:
+                count += 1
 
-        print("\n", file=file)
+        print(
+            f"Branch coverage: {round(count / len(branch_coverage) * 100, 2)}%\n",
+            file=file,
+        )
 
 
 if __name__ == '__main__':
