@@ -27,7 +27,7 @@
 
 import re
 
-from .w3dtf import _parse_date_w3dtf
+from reader._vendor.feedparser.datetimes.w3dtf import _parse_date_w3dtf
 
 # 8-bit date handling routines written by ytrewq1.
 _korean_year = '\ub144' # b3e2 in euc-kr
@@ -58,18 +58,59 @@ def _parse_date_onblog(dateString):
     return _parse_date_w3dtf(w3dtfdate)
 
 
+# for coverage test
+branch_coverage = {
+    "parse_data_nate_1": False,
+    "parse_data_nate_2": False,
+    "parse_data_nate_3": False,
+    "parse_data_nate_4": False,
+    "parse_data_nate_5": False,
+    "parse_data_nate_6": False
+}
+
+def print_coverage():
+    num_branches = 0
+    hit_branches = 0 
+    for branch, hit in branch_coverage.items():
+        if hit: 
+            hit_branches += 1
+        print(f"{branch} was {'hit' if hit else 'not hit'}")
+        num_branches += 1
+    
+    print(f"Current Branch Coverage: {int(hit_branches/num_branches * 100)}%\n")
+
+
+
 def _parse_date_nate(dateString):
     """Parse a string according to the Nate 8-bit date format"""
+    print(f"Input DateString: {dateString}")
+
     m = _korean_nate_date_re.match(dateString)
     if not m:
+        branch_coverage["parse_data_nate_1"] = True
         return
+    
+    branch_coverage["parse_data_nate_2"] = True
     hour = int(m.group(5))
     ampm = m.group(4)
+
     if ampm == _korean_pm:
+        branch_coverage["parse_data_nate_3"] = True
         hour += 12
+
+    # add an else here
+    else:
+        branch_coverage["parse_data_nate_4"] = True
+
     hour = str(hour)
     if len(hour) == 1:
+        branch_coverage["parse_data_nate_5"] = True
         hour = '0' + hour
+    
+    # add and else here
+    else:
+        branch_coverage["parse_data_nate_6"] = True
+
     w3dtfdate = '%(year)s-%(month)s-%(day)sT%(hour)s:%(minute)s:%(second)s%(zonediff)s' % \
                 {
                     'year': m.group(1),
@@ -81,3 +122,36 @@ def _parse_date_nate(dateString):
                     'zonediff': '+09:00',
                 }
     return _parse_date_w3dtf(w3dtfdate)
+
+def return_w3dtf(m):
+    w3dtfdate = '%(year)s-%(month)s-%(day)sT%(hour)s:%(minute)s:%(second)s%(zonediff)s' % {
+        'year': m.tm_year,
+        'month': m.tm_mon,
+        'day': m.tm_mday,
+        'hour': m.tm_hour,
+        'minute': m.tm_min,
+        'second': m.tm_sec,
+        'zonediff': '+09:00',
+    }
+    return w3dtfdate
+
+
+if __name__ == '__main__':
+    w3dtf_regex = re.compile(r'^\d{4}-\d{1,2}-\d{1,2}T\d{1,2}:\d{1,2}:\d{1,2}([+-]\d{2}:\d{2}|Z)$')
+    
+    print("...Staring the _parse_date_nate TEST...")
+
+    # proper Korean nate format
+    result = _parse_date_nate("2023-06-11 오전 09:15:00")
+    print_coverage()
+    result = _parse_date_nate("2021-06-15 오후 14:45:30")
+    print_coverage()
+
+    # proper Korean onblog format
+    result = _parse_date_nate("2023년 06월 11일 09:15:00")
+    print_coverage()
+
+    # different format 
+    result = _parse_date_nate("This is Edwin")
+    print_coverage()
+    
