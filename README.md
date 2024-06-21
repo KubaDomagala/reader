@@ -142,6 +142,7 @@ The coverage tool can be run by using pytest -s tests/test_parser.py
 1. Link to the commit with the changed code of the function(_vendor/feedparser/http.py file) - https://github.com/KubaDomagala/reader/commit/108385f001ee1d6462d8b52357b04410e9d40a48#diff-c55ed7a611ef230781c2cab96ac3fb2fba6468e7b2e92d0a9abe2b49f6ebaf08
 (The results can also be seen in the commit in the file "_build_urllib2_request_coverage.txt" )
 2. Link to the update of the modification - https://github.com/KubaDomagala/reader/commit/ad3b7296bda99e7e16bd29c0651d3bcb7fd29aa7
+3. final modification - https://github.com/KubaDomagala/reader/commit/7fe5a9b8be8e353bc25dcc600541f8593a8535cb#diff-ae4c294e1304214c4dc7860dfb07bbf702d59f952cf157ea705cf22b1e134244
 
 CODE (BEFORE):
   <img src="readme_imgs/_build_before.png"
@@ -174,6 +175,7 @@ RESULTS (FINAL, full results can be seen in a file "_build_urllib2_request_cover
 
 1. Link to the 1st commit with the coverage changes - https://github.com/KubaDomagala/reader/commit/189b4a84e784f5feb72056ff9b0a6b2cace8c683 (in the file "src/reader_cli.py")
 2. 2nd part of the coverage changes - https://github.com/KubaDomagala/reader/commit/108385f001ee1d6462d8b52357b04410e9d40a48#diff-ae4c294e1304214c4dc7860dfb07bbf702d59f952cf157ea705cf22b1e134244 (in the file in the file "src/reader_cli.py")
+3. final modification - https://github.com/KubaDomagala/reader/commit/7fe5a9b8be8e353bc25dcc600541f8593a8535cb#diff-ae4c294e1304214c4dc7860dfb07bbf702d59f952cf157ea705cf22b1e134244
 
 CODE (BEFORE):
   <img src="readme_imgs/setup_logging_before_1.png"
