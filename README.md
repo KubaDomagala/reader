@@ -14,7 +14,6 @@ Programming language: python
 
 ### Existing tool
 
-<Inform the name of the existing tool that was executed and how it was executed>
 Tool: tox + coverage.py <br />
 Usage: The tool was used by following the guide on the contribute page of the project. We set up the development environment and run "tox" command, which run the full test suite using coverage.py. We found the result under "htmlcov/index.html" file name, which generated a file with the coverage (it can also be found in the terminal, however the html file is easier to read).
 
@@ -29,10 +28,8 @@ Usage: The tool was used by following the guide on the contribute page of the pr
 
 ### Your own coverage tool
 
-<The following is supposed to be repeated for each group member>
-
-Group 69 - Yves Mangano <br />
-Function 1 - _is_base64
+#### Yves Mangano <br />
+##### Function 1 - _is_base64
 
 https://github.com/KubaDomagala/reader/commit/92fcd2ff30c1292d1ed557ab4cf23a8ea9cd9fc6#diff-0b5c7ce5afcc43bab73a6f39f273da57a5f004f1a89da9c8361a84442ee0217d
 
@@ -50,7 +47,9 @@ not being commented out, the results of the base_64 branch coverage tool will be
 in the middle so it might be a little bit hard to find. However, it will show the
 exact same output.
 
-Function 2 - map_content_type
+---
+
+##### Function 2 - map_content_type
 https://github.com/KubaDomagala/reader/commit/92fcd2ff30c1292d1ed557ab4cf23a8ea9cd9fc6#diff-0b5c7ce5afcc43bab73a6f39f273da57a5f004f1a89da9c8361a84442ee0217d
 
 And
@@ -63,8 +62,10 @@ https://github.com/KubaDomagala/reader/commit/d77e6039e13b0425a36f6e1117c0477007
 
 The coverage tool can be run by using pytest -s tests/test_parser.py
 
-Group 69 - Caio Miranda Haschelevici <br />
-Function 1 - hungarian.py
+---
+
+#### Caio Miranda Haschelevici <br />
+##### Function 1 - hungarian.py
 
    <Original cover results:>
    <img src="readme_imgs/header.png"
@@ -98,7 +99,8 @@ Function 1 - hungarian.py
    alt="hungarian own test results"
    style="float: left; margin-right: 10px;" />
 
-Function 2 - asctime.py
+--- 
+##### Function 2 - asctime.py
 
    <Original cover results:>
    <img src="readme_imgs/header.png"
@@ -131,14 +133,15 @@ Function 2 - asctime.py
    <img src="readme_imgs/correctAscres.png"
    alt="asctime own test results"
    style="float: left; margin-right: 10px;" />
-     
-Group 69 - Kuba Domagala <br />
-Function 1 - _build_urilib2_request
+
+---
+
+#### Kuba Domagala <br />
+##### Function 1 - _build_urilib2_request
   
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the instrumented code to gather coverage measurements>
-Link to the commit with the changed code of the function(_vendor/feedparser/http.py file) - https://github.com/KubaDomagala/reader/commit/108385f001ee1d6462d8b52357b04410e9d40a48#diff-c55ed7a611ef230781c2cab96ac3fb2fba6468e7b2e92d0a9abe2b49f6ebaf08
+1. Link to the commit with the changed code of the function(_vendor/feedparser/http.py file) - https://github.com/KubaDomagala/reader/commit/108385f001ee1d6462d8b52357b04410e9d40a48#diff-c55ed7a611ef230781c2cab96ac3fb2fba6468e7b2e92d0a9abe2b49f6ebaf08
 (The results can also be seen in the commit in the file "_build_urllib2_request_coverage.txt" )
-Link to the update of the modification - https://github.com/KubaDomagala/reader/commit/ad3b7296bda99e7e16bd29c0651d3bcb7fd29aa7
+2. Link to the update of the modification - https://github.com/KubaDomagala/reader/commit/ad3b7296bda99e7e16bd29c0651d3bcb7fd29aa7
 
 CODE (BEFORE):
   <img src="readme_imgs/_build_before.png"
@@ -164,12 +167,13 @@ RESULTS (FINAL, full results can be seen in a file "_build_urllib2_request_cover
   <img src="readme_imgs/_build_urllib2_request_result_cov.png"
      alt="_build_uri final coverage results"
      style="float: left; margin-right: 10px;" />
-  
-Function 2 - setup_logging
 
-<Provide the same kind of information provided for Function 1>
-Link to the 1st commit with the coverage changes - https://github.com/KubaDomagala/reader/commit/189b4a84e784f5feb72056ff9b0a6b2cace8c683 (in the file "src/reader_cli.py")
-2nd part of the coverage changes - https://github.com/KubaDomagala/reader/commit/108385f001ee1d6462d8b52357b04410e9d40a48#diff-ae4c294e1304214c4dc7860dfb07bbf702d59f952cf157ea705cf22b1e134244 (in the file in the file "src/reader_cli.py")
+---
+
+##### Function 2 - setup_logging
+
+1. Link to the 1st commit with the coverage changes - https://github.com/KubaDomagala/reader/commit/189b4a84e784f5feb72056ff9b0a6b2cace8c683 (in the file "src/reader_cli.py")
+2. 2nd part of the coverage changes - https://github.com/KubaDomagala/reader/commit/108385f001ee1d6462d8b52357b04410e9d40a48#diff-ae4c294e1304214c4dc7860dfb07bbf702d59f952cf157ea705cf22b1e134244 (in the file in the file "src/reader_cli.py")
 
 CODE (BEFORE):
   <img src="readme_imgs/setup_logging_before_1.png"
@@ -201,9 +205,10 @@ RESULTS (FINAL, full results can be seen in a file "setup_logging_coverage.txt
      alt="setup_logging final coverage results"
      style="float: left; margin-right: 10px;" />
 
+---
 
-Group 69 - Sheng-Wen Chen<br>
-Function 1 - _parse_poslist()<br><br>
+#### Sheng-Wen Chen<br>
+##### Function 1 - _parse_poslist()<br><br>
 
 My commitment can be found by clicking this link:
 https://github.com/KubaDomagala/reader/commit/ed1d0cf4e1849477d5700d74490750b2d60dd15d
@@ -212,7 +217,9 @@ https://github.com/KubaDomagala/reader/commit/ed1d0cf4e1849477d5700d74490750b2d6
 
 The coverage tool for _parse_poslist() is written under the file [src/reader/_vendor/feedparser/namespaces/georss.py](https://github.com/KubaDomagala/reader/blob/coverage-improv-1/src/reader/_vendor/feedparser/namespaces/georss.py), same location of where _parse_poslist() exists in. To run this, simply run the georss.py file from the terminal with the command <code>python3 ./src/reader/_vendor/feedparser/namespaces/georss.py</code>. As it can be seen with my own coverage tool, all of the branches in _parse_poslist() were hit, leading to a coverage percentage of 100%. 
 
-Function 2 - _parse_date_nate()<br><br>
+---
+
+##### Function 2 - _parse_date_nate()<br><br>
 
 My commitment can be found by clicking this link:
 https://github.com/KubaDomagala/reader/commit/a89c04e040ff6391efdc5a9db8f64e37fcaadd3e
@@ -224,28 +231,24 @@ The coverage tool for _parse_date_nate() is written under the file [src/reader/_
 
 ### Individual tests
 
-<The following is supposed to be repeated for each group member>
-
-Group 69 - Yves Mangano <br />
-Test 1
+#### Yves Mangano <br />
+##### Test 1
   
 https://github.com/KubaDomagala/reader/commit/92fcd2ff30c1292d1ed557ab4cf23a8ea9cd9fc6#diff-237d6caeea59e3cf8f303958b4b29e752861048496a047a6af38a12915a02e32
-
-<Provide a screenshot of the old coverage results (the same as you already showed above)>
 
 ![IMG1 old results](readme_imgs/_is_base64_old_coverage_results.png)
 
 ![IMG1 new results](readme_imgs/_is_base64_new_coverage_results_1.png)
 ![IMG2 new results](readme_imgs/_is_base64_new_coverage_results_2.png)
 
-<State the coverage improvement with a number and elaborate on why the coverage is improved>
-
 The coverage for function _is_base64 improved from 0% to 100%. This is because
 there were simply no tests made for _is_base64, causing in a branch coverage of 0%.
 However, since I have added tests to make sure each branch condition is tested
 and accessed, the branch condition went up to 100%. 
 
-Test 2
+---
+
+##### Test 2
 https://github.com/KubaDomagala/reader/commit/92fcd2ff30c1292d1ed557ab4cf23a8ea9cd9fc6#diff-237d6caeea59e3cf8f303958b4b29e752861048496a047a6af38a12915a02e32
 
 ![IMG1 old results](readme_imgs/map_content_type_old_coverage_results.png)
@@ -256,10 +259,11 @@ The coverage for function map_content_type improved from 0% to 100%. This is bec
 there were simply no tests made for map_content_type, causing in a branch coverage of 0%.
 However, since I have added tests to make sure each branch condition is tested
 and accessed, the branch condition went up to 100%. 
-<Provide a screenshot of the new coverage results>
 
-Caio Miranda Haschelevici <br />
-Test 1 - hungarian.py
+---
+
+#### Caio Miranda Haschelevici <br />
+##### Test 1 - hungarian.py
 
    <Original cover results:>
    <img src="readme_imgs/header.png"
@@ -282,8 +286,10 @@ Test 1 - hungarian.py
    style="float: left; margin-right: 10px;" />
 
 Overall we saw an improvement in coverage of 16% the main reason from this can be found when looking at the initial report generated by the coverage tool used. From what it shows the main reason for this low coverage where that the tests used always made the conditions on the if statement always true or false. Therefore, coverage wasnt very high due to the branch conditions not being checked by any individual test. My test checks each branch condition when its true or false thus determining if the branches would work properly during operation. Thus, increasing the coverage by 16%. It is also important to note that the functions coverage didnt increase further due to the inclusion of my own coverage tool into the function. The inclusion of this tool into the function itself caused alot of statements to go unused as they are exclusive statements to my own coverage tool. For example the area with tests for my own coverage tool.
-     
-Test 2 - asctime.py
+
+---
+
+##### Test 2 - asctime.py
    <Original cover results:>
    <img src="readme_imgs/header.png"
    alt="Coverage 2 before"
@@ -307,15 +313,14 @@ Test 2 - asctime.py
 
    Overall we saw an improvement in coverage of 17%, we saw this improvements because of a similar reason as the previous test. Just like in the previous case we had a low initial coverage because certain branches where either always true or always false with the pre-exisiting tests. However, the tests I added ensure that either case of every branch is tested and therefore we had an increase in the overall coverage of this function by 17%. Just like in the rpevious test case, it is important to note that due to the inclusion of my own coverage tool into the function, the coverage wasnt able to be higher. This is due to the fact that certain areas of the code where exclusive to my coverage tool and therefore not tested. Thus, hampering the overall coverage
 
-Kuba Domagala <br />
-Test 1 - _build_urilib2_request
+---
+
+#### Kuba Domagala <br />
+##### Test 1 - _build_urilib2_request
   
-<Show a patch (diff) or a link to a commit made in your forked repository that shows the new/enhanced test>
-Link to the commit with added tests - https://github.com/KubaDomagala/reader/commit/108385f001ee1d6462d8b52357b04410e9d40a48#diff-371d71686903901ab120e582d2ca811179700201f7652353fdc03bc9f0fb9240 (in the file "tests/test_reader__vendor_feedparser_urls.py", function "test_build_urllib2_request()")
+1. Link to the commit with added tests - https://github.com/KubaDomagala/reader/commit/108385f001ee1d6462d8b52357b04410e9d40a48#diff-371d71686903901ab120e582d2ca811179700201f7652353fdc03bc9f0fb9240 (in the file "tests/test_reader__vendor_feedparser_urls.py", function "test_build_urllib2_request()")
+2.https://github.com/KubaDomagala/reader/commit/92fcd2ff30c1292d1ed557ab4cf23a8ea9cd9fc6#diff-237d6caeea59e3cf8f303958b4b29e752861048496a047a6af38a12915a02e32
 
-https://github.com/KubaDomagala/reader/commit/92fcd2ff30c1292d1ed557ab4cf23a8ea9cd9fc6#diff-237d6caeea59e3cf8f303958b4b29e752861048496a047a6af38a12915a02e32
-
-<Provide a screenshot of the old coverage results (the same as you already showed above)>
 BEFORE (function itself):
   <img src="readme_imgs/_build_coverage_before_official.png"
      alt="_build_uri coverage before official"
@@ -331,7 +336,6 @@ BEFORE (function itself):
      alt="_build_uri coverage before official file"
      style="float: left; margin-right: 10px;" />
 
-<Provide a screenshot of the new coverage results>
 AFTER (function itself):
   <img src="readme_imgs/_build_coverage_after_official.png"
      alt="_build_uri coverage after official"
@@ -347,13 +351,14 @@ AFTER (function itself):
      alt="_build_uri coverage after official file"
      style="float: left; margin-right: 10px;" />
 
-<State the coverage improvement with a number and elaborate on why the coverage is improved>
 The coverage of the function has improved from 0% to 100% in both code and branch coverage. This is because no tests have existed for that specific function and no already existing test used the functionality of that function. The coverage has improved as I added extensive tests that check every branch for that function that have not existed before.
 
-Test 2 - setup_logging
-Link to the commit with added tests https://github.com/KubaDomagala/reader/commit/189b4a84e784f5feb72056ff9b0a6b2cace8c683#diff-4e8715c7a425ee52e74b7df4d34efd32e8c92f3e60bd51bc2e1ad5943b82032e (in the file "tests/test_cli.py" function "test_cli_setup_logging") + modification here (same file and function) - https://github.com/KubaDomagala/reader/commit/108385f001ee1d6462d8b52357b04410e9d40a48#diff-4e8715c7a425ee52e74b7df4d34efd32e8c92f3e60bd51bc2e1ad5943b82032e
+---
 
-<Provide the same kind of information provided for Test 1>
+##### Test 2 - setup_logging
+1. Link to the commit with added tests https://github.com/KubaDomagala/reader/commit/189b4a84e784f5feb72056ff9b0a6b2cace8c683#diff-4e8715c7a425ee52e74b7df4d34efd32e8c92f3e60bd51bc2e1ad5943b82032e (in the file "tests/test_cli.py" function "test_cli_setup_logging")
+2. modification here (same file and function) - https://github.com/KubaDomagala/reader/commit/108385f001ee1d6462d8b52357b04410e9d40a48#diff-4e8715c7a425ee52e74b7df4d34efd32e8c92f3e60bd51bc2e1ad5943b82032e
+
 BEFORE (function ifself:)
   <img src="readme_imgs/setup_logging_before_official.png"
      alt="setup_logging before official"
@@ -387,11 +392,10 @@ BEFORE (function ifself:)
 
 The coverage of the function has improved from 60% to 100% (branch coverage) and from 65% to 100% (code coverage)
 
+---
 
-Group 69 - Sheng-Wen Chen<br>
-
-Function 1 - _parse_poslist()<br><br>
-<Test 1>georss.py
+#### Sheng-Wen Chen<br>
+##### Test 1 georss.py
 ![_parse_poslist old coverage](readme_imgs/_parse_poslist_OLD_COVERAGE.png)
 ![_parse_poslist old coverage %](readme_imgs/_parse_poslist_OLD_COVERAGE_PERC.png)
 ![_parse_poslist new coverage](readme_imgs/_parse_poslist_NEW_COVERAGE.png)
@@ -400,8 +404,9 @@ Function 1 - _parse_poslist()<br><br>
 Overall the coverage percentage increased from 0% t0 100%.
 The coverage percentage of _parse_poslist() was initially only 0%, meaing that it wasn't even tested in its original file. After building a tests for _parse_poslist(), all of the branches were hit, and the coverage percentage increased to 100%. 
 
+---
 
-<Test 2>korean.py
+##### Test 2 korean.py
 ![_parse_poslist old coverage](readme_imgs/_parse_date_nate_OLD_COVERAGE.png)
 ![_parse_poslist old coverage %](readme_imgs/_parse_date_nate_OLD_COVERAGE_PERC.png)
 ![_parse_poslist new coverage](readme_imgs/_parse_date_nate_NEW_COVERAGE.png)
@@ -419,8 +424,7 @@ The coverage percentage of _parse_date_nate() was initially only 0%, meaing that
 
 ## Statement of individual contributions
 
-<Write what each group member did>
-Group 69 - Yves Mangano
+### Yves Mangano
 
 I worked on the functions _is_base64 and map_content_type. I made my own coverage
 tool where the branch coverage can be shown by running pytest -s tests/test_parser.py
@@ -437,16 +441,18 @@ for my teammates to help understand how they can test their functions.
 Especially since _is_base64 function is a method from a class, it is harder to test, 
 but I managed how to and set an example for the group doing this.
 
-  
-Kuba Domagala <br />
+---
+
+### Kuba Domagala
 I worked on the functions _build_urilib2_request and setup_logging. I made my own coverage tool where the branch coverage can be shown by opening the respective files created in the main root of the project (first entry is the before the added tests, everything else is after).
 
 I increased the coverage of these functions to 100% in their respective files, enhancing the coverage of the project and making sure that all of the branches are accessed and their results are as expected.
 
 Additionally I was responsible for merging all of the pull requests and general organisation of the work. I was the one who found the repository that we are using in the assingment and made sure that everyone was able to run things correctly, so that we could start working.
 
+---
 
-Group 69 - Sheng-Wen Chen<br>
+### Sheng-Wen Chen
 
 I worked on the functions _parse_poslist() and _parse_nate_date(). I made my own coverage tools where the branch coverage can be shown by running the commands <code>python3 ./src/reader/_vendor/feedparser/namespaces/georss.py</code> and <code>python3 src/reader/_vendor/feedparser/datetimes/korean.py</code>.
 
