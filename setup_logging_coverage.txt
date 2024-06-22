@@ -1,0 +1,34 @@
+setup_logging_branch_1, hit: False
+setup_logging_branch_2, hit: True
+setup_logging_branch_3, hit: True
+setup_logging_branch_4, hit: False
+setup_logging_branch_5, hit: False
+Branch coverage: 40.0%
+
+setup_logging_branch_1, hit: True
+setup_logging_branch_2, hit: True
+setup_logging_branch_3, hit: True
+setup_logging_branch_4, hit: False
+setup_logging_branch_5, hit: False
+Branch coverage: 60.0%
+
+setup_logging_branch_1, hit: True
+setup_logging_branch_2, hit: True
+setup_logging_branch_3, hit: True
+setup_logging_branch_4, hit: False
+setup_logging_branch_5, hit: False
+Branch coverage: 60.0%
+
+setup_logging_branch_1, hit: True
+setup_logging_branch_2, hit: True
+setup_logging_branch_3, hit: True
+setup_logging_branch_4, hit: True
+setup_logging_branch_5, hit: False
+Branch coverage: 80.0%
+
+setup_logging_branch_1, hit: True
+setup_logging_branch_2, hit: True
+setup_logging_branch_3, hit: True
+setup_logging_branch_4, hit: True
+setup_logging_branch_5, hit: True
+Branch coverage: 100.0%

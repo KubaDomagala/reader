@@ -88,17 +88,53 @@ class URLHandler(urllib.request.HTTPDigestAuthHandler, urllib.request.HTTPRedire
         self.reset_retry_count()
         return retry
 
+branch_coverage = {
+    "_build_urllib2_request_branch_1" : False,
+    "_build_urllib2_request_branch_2" : False,
+    "_build_urllib2_request_branch_3" : False,
+    "_build_urllib2_request_branch_4" : False,
+    "_build_urllib2_request_branch_5" : False,
+    "_build_urllib2_request_branch_6" : False,
+    "_build_urllib2_request_branch_7" : False,
+    "_build_urllib2_request_branch_8" : False,
+    "_build_urllib2_request_branch_9" : False,
+    "_build_urllib2_request_branch_10" : False,
+    "_build_urllib2_request_branch_11" : False,
+    "_build_urllib2_request_branch_12" : False,
+    "_build_urllib2_request_branch_13" : False
+}
+
+def print_coverage__build():
+    count = 0
+    with open('_build_urllib2_request_coverage.txt', 'a') as file:
+        for branch, hit in branch_coverage.items():
+            print(f"{branch}, hit: {hit}", file=file)
+            if hit == True:
+                count += 1
+
+        print(f"Branch coverage: {round(count / len(branch_coverage) * 100, 2)}%\n", file=file)
+
 
 def _build_urllib2_request(url, agent, accept_header, etag, modified, referrer, auth, request_headers):
     request = urllib.request.Request(url)
     request.add_header('User-Agent', agent)
     if etag:
+        branch_coverage["_build_urllib2_request_branch_1"] = True
         request.add_header('If-None-Match', etag)
+    else:
+        branch_coverage["_build_urllib2_request_branch_2"] = True
+
     if isinstance(modified, str):
+        branch_coverage["_build_urllib2_request_branch_3"] = True
         modified = _parse_date(modified)
     elif isinstance(modified, datetime.datetime):
+        branch_coverage["_build_urllib2_request_branch_4"] = True
         modified = modified.utctimetuple()
+    else:
+        branch_coverage["_build_urllib2_request_branch_5"] = True
+
     if modified:
+        branch_coverage["_build_urllib2_request_branch_6"] = True
         # format into an RFC 1123-compliant timestamp. We can't use
         # time.strftime() since the %a and %b directives can be affected
         # by the current locale, but RFC 2616 states that dates must be
@@ -106,13 +142,27 @@ def _build_urllib2_request(url, agent, accept_header, etag, modified, referrer, 
         short_weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
         months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
         request.add_header('If-Modified-Since', '%s, %02d %s %04d %02d:%02d:%02d GMT' % (short_weekdays[modified[6]], modified[2], months[modified[1] - 1], modified[0], modified[3], modified[4], modified[5]))
+    else:
+        branch_coverage["_build_urllib2_request_branch_7"] = True
+
     if referrer:
+        branch_coverage["_build_urllib2_request_branch_8"] = True
         request.add_header('Referer', referrer)
+    else:
+        branch_coverage["_build_urllib2_request_branch_9"] = True
+
     request.add_header('Accept-encoding', 'gzip, deflate')
     if auth:
+        branch_coverage["_build_urllib2_request_branch_10"] = True
         request.add_header('Authorization', 'Basic %s' % auth)
+    else:
+        branch_coverage["_build_urllib2_request_branch_11"] = True
+
     if accept_header:
+        branch_coverage["_build_urllib2_request_branch_12"] = True
         request.add_header('Accept', accept_header)
+    else:
+        branch_coverage["_build_urllib2_request_branch_13"] = True    
     # use this for whatever -- cookies, special headers, etc
     # [('Cookie','Something'),('x-special-header','Another Value')]
     for header_name, header_value in request_headers.items():

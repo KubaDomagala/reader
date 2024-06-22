@@ -11,12 +11,11 @@ import click
 import yaml
 
 import reader
-
-from . import StorageError
-from ._config import make_reader_config
-from ._config import make_reader_from_config
-from ._plugins import Loader
-from ._plugins import LoaderError
+from reader import StorageError
+from reader._config import make_reader_config
+from reader._config import make_reader_from_config
+from reader._plugins import Loader
+from reader._plugins import LoaderError
 
 
 APP_NAME = reader.__name__
@@ -57,12 +56,17 @@ def make_reader_with_plugins(**kwargs):
 
 def setup_logging(verbose):
     if verbose < 0:
+        branch_coverage['setup_logging_branch_1'] = True
         return
+    branch_coverage['setup_logging_branch_2'] = True
     if verbose == 0:
+        branch_coverage['setup_logging_branch_3'] = True
         level = logging.WARNING
     elif verbose == 1:
+        branch_coverage['setup_logging_branch_4'] = True
         level = logging.INFO
     else:
+        branch_coverage['setup_logging_branch_5'] = True
         level = logging.DEBUG
     logging.getLogger('reader').setLevel(level)
     handler = logging.StreamHandler()
@@ -483,5 +487,41 @@ except ImportError:
     pass
 
 
+branch_coverage = {
+    "setup_logging_branch_1": False,
+    "setup_logging_branch_2": False,
+    "setup_logging_branch_3": False,
+    "setup_logging_branch_4": False,
+    "setup_logging_branch_5": False,
+}
+
+
+def print_coverage_setup_logging():
+    with open('setup_logging_coverage.txt', 'a') as file:
+        count = 0
+        for branch, hit in branch_coverage.items():
+            print(f"{branch}, hit: {hit}", file=file)
+            if hit:
+                count += 1
+
+        print(
+            f"Branch coverage: {round(count / len(branch_coverage) * 100, 2)}%\n",
+            file=file,
+        )
+
+
 if __name__ == '__main__':
-    cli()
+    if "coverage-measure" in sys.argv:
+        setup_logging(-1)
+        print_coverage_setup_logging()
+
+        setup_logging(0)
+        print_coverage_setup_logging()
+
+        setup_logging(1)
+        print_coverage_setup_logging()
+
+        setup_logging(2)
+        print_coverage_setup_logging()
+    else:
+        cli()

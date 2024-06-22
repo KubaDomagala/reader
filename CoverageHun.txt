@@ -1,0 +1,23 @@
+parse_date_hungarian_1 was hit
+parse_date_hungarian_2 was not hit
+parse_date_hungarian_3 was not hit
+parse_date_hungarian_4 was not hit
+parse_date_hungarian_5 was not hit
+parse_date_hungarian_6 was not hit
+Branch coverage percentage: 16.666666666666664%
+
+parse_date_hungarian_1 was hit
+parse_date_hungarian_2 was hit
+parse_date_hungarian_3 was hit
+parse_date_hungarian_4 was not hit
+parse_date_hungarian_5 was not hit
+parse_date_hungarian_6 was hit
+Branch coverage percentage: 66.66666666666666%
+
+parse_date_hungarian_1 was hit
+parse_date_hungarian_2 was hit
+parse_date_hungarian_3 was hit
+parse_date_hungarian_4 was hit
+parse_date_hungarian_5 was hit
+parse_date_hungarian_6 was hit
+Branch coverage percentage: 100.0%

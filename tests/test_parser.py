@@ -1,6 +1,9 @@
 import io
 import json
 import logging
+
+# Korean nate test
+import re
 from contextlib import contextmanager
 from unittest.mock import MagicMock
 
@@ -18,16 +21,21 @@ from reader._parser.jsonfeed import JSONFeedParser
 from reader._parser.requests import SessionWrapper
 from reader._types import FeedData
 from reader._vendor import feedparser
-from reader._vendor.feedparser.mixin import XMLParserMixin
-from reader._vendor.feedparser.mixin import FeedParserDict
 from reader._vendor.feedparser.datetimes.asctime import _parse_date_asctime
-from reader._vendor.feedparser.datetimes.asctime import branch_coverage_print_asctime
 from reader._vendor.feedparser.datetimes.hungarian import _parse_date_hungarian
-from reader._vendor.feedparser.datetimes.hungarian import (
-    branch_coverage_print_hungarian,
-)
+from reader._vendor.feedparser.datetimes.korean import _parse_date_nate
+from reader._vendor.feedparser.datetimes.korean import return_w3dtf
+from reader._vendor.feedparser.datetimes.w3dtf import _parse_date_w3dtf
+
+# Parse poslist test
+from reader._vendor.feedparser.namespaces.georss import _parse_poslist
 from reader.exceptions import ParseError
 from utils import make_url_base
+
+
+# Parse perforce test
+# import time
+# from reader._vendor.feedparser.datetimes.perforce import _parse_date_perforce
 
 
 @pytest.fixture(params=[True, False])
@@ -1063,36 +1071,47 @@ def test_retriever_selection():
     assert excinfo.value.url == 'file:unknown'
     assert 'no retriever' in excinfo.value.message
 
-def test_map_content_type():
-    self = XMLParserMixin()
-    
-    assert(self.map_content_type('text') == 'text/plain')
 
-    assert(self.map_content_type('html') == 'text/html')
+# TESTING FOR KOREAN NATE FORMAT
+def test_korean_nate_format():
+    w3dtf_regex = re.compile(
+        r'^\d{4}-\d{1,2}-\d{1,2}T\d{1,2}:\d{1,2}:\d{1,2}([+-]\d{2}:\d{2}|Z)$'
+    )
 
-    assert(self.map_content_type('xhtml') == 'application/xhtml+xml')
+    # proper Korean nate format
+    result = _parse_date_nate("2023-06-11 오전 09:15:00")
+    assert w3dtf_regex.match(return_w3dtf(result))
+    result = _parse_date_nate("2021-06-15 오후 14:45:30")
+    assert None == result
 
-def test_is_base64():
-    def setup(attrs_d):
-        self = XMLParserMixin()
+    # proper Korean onblog format
+    result = _parse_date_nate("2023년 06월 11일 09:15:00")
+    assert None == result
 
-        self.contentparams = FeedParserDict({
-            'type': self.map_content_type(attrs_d.get('type')),
-            'language': '',
-            'base': ''})
-        return self._is_base64(attrs_d, self.contentparams)
+    # completely wrong format
+    result = _parse_date_nate("This is Edwin")
+    assert None == result
 
-    assert(setup({'type': 'text/', 'mode': 'base64'}) == 1)
 
-    assert(setup({'type': 'text/'}) == 0)
+# TESTING FOR PARSE POSLIST
+def test_parse_poslist():
+    # linestring
+    assert {'type': 'LineString', 'coordinates': [(20.0, 10.0)]} == _parse_poslist(
+        "10,20,30", "linestring", swap=True, dims=2
+    )
 
-    assert(setup({'type': '+xml'}) == 0)
+    # polygon
+    assert {'type': 'Polygon', 'coordinates': ([(20.0, 10.0)],)} == _parse_poslist(
+        "10,20,30", "polygon", swap=True, dims=2
+    )
 
-    assert(setup({'type': '/xml'}) == 0)
+    # nothing
+    assert None == _parse_poslist("10,20,30", "", swap=True, dims=2)
 
-    assert(setup({'type': 'abc'}) == 1)
 
 def test_hungarian():
+    open("CoverageHun.txt", "w").close()
+
     def sametime(time, year, month, day, hour, minute):
         if (
             time.tm_year == year
@@ -1106,7 +1125,6 @@ def test_hungarian():
             return False
 
     assert _parse_date_hungarian("INVALID") == None
-    branch_coverage_print_hungarian()
 
     assert (
         sametime(
@@ -1114,7 +1132,6 @@ def test_hungarian():
         )
         == True
     )
-    branch_coverage_print_hungarian()
 
     assert (
         sametime(
@@ -1122,10 +1139,11 @@ def test_hungarian():
         )
         == True
     )
-    branch_coverage_print_hungarian()
 
 
 def test_asctime():
+    open("CoverageAsc.txt", "w").close()
+
     def sametime(time, year, month, day, hour, minute, second):
         if (
             time.tm_year == year
@@ -1140,8 +1158,6 @@ def test_asctime():
             return False
 
     assert _parse_date_asctime("INVALID") == None
-    branch_coverage_print_asctime()
-
     assert (
         sametime(
             _parse_date_asctime("thursday may 13 18:55:30 2024"),
@@ -1154,4 +1170,3 @@ def test_asctime():
         )
         == True
     )
-    branch_coverage_print_asctime()

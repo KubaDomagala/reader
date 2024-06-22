@@ -83,22 +83,46 @@ def convert_to_idn(url):
         return url
 
 
+branch_coverage = {
+    "make_safe_absolute_uri_branch_1" : False,
+    "make_safe_absolute_uri_branch_2" : False,
+    "make_safe_absolute_uri_branch_3" : False,
+    "make_safe_absolute_uri_branch_4" : False,
+    "make_safe_absolute_uri_branch_5" : False,
+    "make_safe_absolute_uri_branch_6" : False, 
+    "make_safe_absolute_uri_branch_7" : False
+}
+
+def print_coverage_uri():
+    with open('make_safe_absolute_uri_coverage.txt', 'a') as file:
+        for branch, hit in branch_coverage.items():
+            print(f"{branch}, hit: {hit}", file=file)
+
+        print("\n", file=file)
+
 def make_safe_absolute_uri(base, rel=None):
     # bail if ACCEPTABLE_URI_SCHEMES is empty
     if not ACCEPTABLE_URI_SCHEMES:
+        branch_coverage["make_safe_absolute_uri_branch_1"] = True
         return _urljoin(base, rel or '')
+    branch_coverage["make_safe_absolute_uri_branch_2"] = True
     if not base:
+        branch_coverage["make_safe_absolute_uri_branch_3"] = True
         return rel or ''
     if not rel:
+        branch_coverage["make_safe_absolute_uri_branch_4"] = True
         try:
             scheme = urllib.parse.urlparse(base)[0]
         except ValueError:
+            branch_coverage["make_safe_absolute_uri_branch_5"] = True
             return ''
         if not scheme or scheme in ACCEPTABLE_URI_SCHEMES:
+            branch_coverage["make_safe_absolute_uri_branch_6"] = True
             return base
         return ''
     uri = _urljoin(base, rel)
     if uri.strip().split(':', 1)[0] not in ACCEPTABLE_URI_SCHEMES:
+        branch_coverage["make_safe_absolute_uri_branch_7"] = True
         return ''
     return uri
 
