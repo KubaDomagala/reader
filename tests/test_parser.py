@@ -1110,7 +1110,7 @@ def test_parse_poslist():
 
 
 def test_hungarian():
-    open("Coverage.txt", "w").close()
+    open("CoverageHun.txt", "w").close()
 
     def sametime(time, year, month, day, hour, minute):
         if (
