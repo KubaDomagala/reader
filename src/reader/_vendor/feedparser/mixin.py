@@ -46,8 +46,16 @@ branch_coverage_map_content_type = {
 }
 
 def print_coverage_map_content_type():
+    num_branches = 0
+    hit_branches = 0 
+    print("\n")
     for branch, hit in branch_coverage_map_content_type.items():
-        print(f"\n{branch} was {'hit' if hit else 'not hit'}")
+        if hit: 
+            hit_branches += 1
+        print(f"{branch} was {'hit' if hit else 'not hit'}")
+        num_branches += 1
+    
+    print(f"\nCurrent Branch Coverage: {int(hit_branches/num_branches * 100)}%")
 
 branch_coverage_is_base64 = {
     "is_base64_1": False,
@@ -58,8 +66,16 @@ branch_coverage_is_base64 = {
 }
 
 def print_coverage_base64():
+    num_branches = 0
+    hit_branches = 0 
+    print("\n")
     for branch, hit in branch_coverage_is_base64.items():
-        print(f"\n{branch} was {'hit' if hit else 'not hit'}")
+        if hit: 
+            hit_branches += 1
+        print(f"{branch} was {'hit' if hit else 'not hit'}")
+        num_branches += 1
+    
+    print(f"\nCurrent Branch Coverage: {int(hit_branches/num_branches * 100)}%")
 
 class XMLParserMixin(
         _base.Namespace,
