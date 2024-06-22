@@ -97,7 +97,7 @@ The coverage tool can be run by using pytest -s tests/test_parser.py
    style="float: left; margin-right: 10px;" /> <br />  
    Due to the 0% stateent coverage and the fact no exisiting tests called this function. The code produced no results and thus had a branch coverage of 0% before the new tests were added.
 
-   How to run:
+   How to run: <br />
    Coverage tool can be run by using pytest tests/test_parser.py or even the tox command. Results of the branch coverage will be placed in the CoverageHun.txt file. 
 
 --- 
@@ -133,7 +133,7 @@ The coverage tool can be run by using pytest -s tests/test_parser.py
    style="float: left; margin-right: 10px;" /> <br />  
    Due to the 0% stateent coverage and the fact no exisiting tests called this function. The code produced no results and thus had a branch coverage of 0% before the new tests were added.
 
-   How to run:
+   How to run: <br />
    Coverage tool can be run by using pytest tests/test_parser.py or even the tox command. Results of the branch coverage will be placed in the CoverageAsc.txt file. 
 
 ---
