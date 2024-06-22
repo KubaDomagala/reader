@@ -27,11 +27,11 @@
 
 from reader._vendor.feedparser.datetimes.rfc822 import _parse_date_rfc822
 
-
 branch_coverage = { 
     "parse_date_asctime_1": False, 
     "parse_date_asctime_2": False,
-    "parse_date_asctime_3": False
+    "parse_date_asctime_3": False,
+    "parse_date_asctime_4": False
 } 
 
 _months = [
@@ -68,14 +68,18 @@ def _parse_date_asctime(dt):
     if len(parts) == 5:
         branch_coverage["parse_date_asctime_1"] = True
         parts.insert(4, '+0000')
+    else:
+        branch_coverage["parse_date_asctime_2"] = True
 
     # Exit if there are not six parts.
     if len(parts) != 6:
-        branch_coverage["parse_date_asctime_2"] = True
+        branch_coverage["parse_date_asctime_3"] = True
+        branch_coverage_print_asctime()
         return None
     else:
-        branch_coverage["parse_date_asctime_3"] = True
+        branch_coverage["parse_date_asctime_4"] = True
 
+    branch_coverage_print_asctime()
     # Reassemble the parts in an RFC822-compatible order and parse them.
     return _parse_date_rfc822(' '.join([
         parts[0], parts[2], parts[1], parts[5], parts[3], parts[4],
@@ -83,17 +87,11 @@ def _parse_date_asctime(dt):
 
 def branch_coverage_print_asctime(): 
     hitItems = 0
-    for branch, hit in branch_coverage.items(): 
-        if hit:
-            hitItems = hitItems + 1
-            print(branch + " was hit")
-        else:
-            print(branch + " was not hit")
-    print("Branch coverage percentage: " + str((hitItems/3) * 100) + "%")
-
-if __name__ == '__main__':
-    _parse_date_asctime("INVALID")
-    branch_coverage_print_asctime()
-
-    _parse_date_asctime("thursday may 13 18:55:30 2024")
-    branch_coverage_print_asctime()
+    with open("CoverageAsc.txt", "a") as coverageFile:
+        for branch, hit in branch_coverage.items(): 
+            if hit:
+                hitItems = hitItems + 1
+                coverageFile.write(branch + " was hit\n")
+            else:
+                coverageFile.write(branch + " was not hit\n")
+        coverageFile.write("Branch coverage percentage: " + str((hitItems/4) * 100) + "%\n\n")

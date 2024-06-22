@@ -65,74 +65,76 @@ The coverage tool can be run by using pytest -s tests/test_parser.py
 ---
 
 #### Caio Miranda Haschelevici <br />
-##### Function 1 - hungarian.py
+##### Function 1 - _parse_date_hungarian
 
-   <Original cover results:>
-   <img src="readme_imgs/header.png"
-   alt="Coverage header"
-   style="float: left; margin-right: 10px;" />
-   <img src="readme_imgs/Hungarian&Greek.png"
+   Original cover results: <br />  
+   <img src="readme_imgs/CaioImages/original/hungarianOriginal.png"
    alt="Coverage hungarian and asctime before"
    style="float: left; margin-right: 10px;" />
 
-   <Original code:>
-   <img src="readme_imgs/hungarianOriginal1.png"
+   Original code: <br />
+   <img src="readme_imgs/CaioImages/original/hungarianPrefuncOriginal.png"
    alt="hungarian original code 1"
    style="float: left; margin-right: 10px;" />
-   <img src="readme_imgs/hungarianOG2.png"
+   <img src="readme_imgs/CaioImages/original/hungarianFuncOriginal.png"
    alt= "hungarian original code 2"
    style="float: left; margin-right: 10px;" />
      
-   <Changed code to make coverage tool>
-   <img src="readme_imgs/correcthungarian1.png"
+   Changed code to make coverage tool: <br />
+   <img src="readme_imgs/CaioImages/hungarianImportNew.png"
    alt="hungarian new code 1"
    style="float: left; margin-right: 10px;" />
-   <img src="readme_imgs/newhungarian2.png"
+   <img src="readme_imgs/CaioImages/hungarianfunctionNew1.png"
    alt="hungarian new code 2"
    style="float: left; margin-right: 10px;" />
-   <img src="readme_imgs/newhungarian3.png"
+   <img src="readme_imgs/CaioImages/hungarianfunctionNew2.png"
    alt="hungarian new code 3"
    style="float: left; margin-right: 10px;" />
 
-   <Own coverage tool results with own tests:>
-   <img src="readme_imgs/correcthungarianres.png"
+   Own coverage tool results after making own tests: <br />
+   <img src="readme_imgs/CaioImages/OwnCoverageTool/hungarianBCResults.png"
    alt="hungarian own test results"
-   style="float: left; margin-right: 10px;" />
+   style="float: left; margin-right: 10px;" /> <br />  
+   Due to the 0% stateent coverage and the fact no exisiting tests called this function. The code produced no results and thus had a branch coverage of 0% before the new tests were added.
+
+   How to run: <br />
+   Coverage tool can be run by using pytest tests/test_parser.py or even the tox command. Results of the branch coverage will be placed in the CoverageHun.txt file. 
 
 --- 
-##### Function 2 - asctime.py
+##### Function 2 - _parse_date_asctime
 
-   <Original cover results:>
-   <img src="readme_imgs/header.png"
-   alt="Coverage 2 before"
-   style="float: left; margin-right: 10px;" />
-   <img src="readme_imgs/Hungarian&Greek.png"
-   alt="Coverage 2 before"
+   Original cover results: <br />  
+   <img src="readme_imgs/CaioImages/original/asctimeOriginal.png"
+   alt="Coverage hungarian and asctime before"
    style="float: left; margin-right: 10px;" />
 
-   <Original code:>
-   <img src="readme_imgs/AsctimeOG1.png"
+   Original code: <br />
+   <img src="readme_imgs/CaioImages/original/asctimeImportOriginal.png"
    alt="asctime original code 1"
-   style="float: left; margin-right: 10px;" />
-   <img src="readme_imgs/AsctimeOG2.png"
+   style="float: left; margin-right: 10px;" />  <br /> 
+   <img src="readme_imgs/CaioImages/original/asctimeFuncOriginal.png"
    alt= "asctime original code 2"
    style="float: left; margin-right: 10px;" />
-
-   <Changed code to make coverage tool>
-   <img src="readme_imgs/correctAsc1.png"
+     
+   Changed code to make coverage tool: <br />
+   <img src="readme_imgs/CaioImages/asctimeImportNew.png"
    alt="asctime new code 1"
    style="float: left; margin-right: 10px;" />
-   <img src="readme_imgs/correctAsc2.png"
+   <img src="readme_imgs/CaioImages/asctimeFunctionNew1.png"
    alt="asctime new code 2"
    style="float: left; margin-right: 10px;" />
-   <img src="readme_imgs/correctAsc3.png"
+   <img src="readme_imgs/CaioImages/asctimeFunctionNew2.png"
    alt="asctime new code 3"
    style="float: left; margin-right: 10px;" />
 
-   <Own coverage tool results with own tests:>
-   <img src="readme_imgs/correctAscres.png"
+   Own coverage tool results after making own tests: <br />
+   <img src="readme_imgs/CaioImages/OwnCoverageTool/asctimeBCResults.png"
    alt="asctime own test results"
-   style="float: left; margin-right: 10px;" />
+   style="float: left; margin-right: 10px;" /> <br />  
+   Due to the 0% stateent coverage and the fact no exisiting tests called this function. The code produced no results and thus had a branch coverage of 0% before the new tests were added.
+
+   How to run: <br />
+   Coverage tool can be run by using pytest tests/test_parser.py or even the tox command. Results of the branch coverage will be placed in the CoverageAsc.txt file. 
 
 ---
 
@@ -265,55 +267,59 @@ and accessed, the branch condition went up to 100%.
 ---
 
 #### Caio Miranda Haschelevici <br />
-##### Test 1 - hungarian.py
+##### Test 1 - _parse_date_hungarian
 
-   <Original cover results:>
-   <img src="readme_imgs/header.png"
-   alt="Coverage 2 before"
+   Original cover results: <br />
+   <img src="readme_imgs/CaioImages/original/hungarianOriginal.png"
+   alt="Coverage hungarian before"
    style="float: left; margin-right: 10px;" />
-   <img src="readme_imgs/Hungarian&Greek.png"
-   alt="Coverage 2 before"
-   style="float: left; margin-right: 10px;" />
-
-   <New tests:>
-   <img src="readme_imgs/newtestshung.png"
-   alt="new test for hungarian.py"
-   style="float: left; margin-right: 10px;" />
-   <New covarage results:>
-   <img src="readme_imgs/header.png"
-   alt="Coverage 2 before"
-   style="float: left; margin-right: 10px;" />
-   <img src="readme_imgs/correcthun&ascfinal.png"
-   alt="Coverage 2 before"
+   
+   <img src="readme_imgs/CaioImages/original/hungarianReportOriginal.png"
+   alt="Report of Hungarian results"
    style="float: left; margin-right: 10px;" />
 
-Overall we saw an improvement in coverage of 16% the main reason from this can be found when looking at the initial report generated by the coverage tool used. From what it shows the main reason for this low coverage where that the tests used always made the conditions on the if statement always true or false. Therefore, coverage wasnt very high due to the branch conditions not being checked by any individual test. My test checks each branch condition when its true or false thus determining if the branches would work properly during operation. Thus, increasing the coverage by 16%. It is also important to note that the functions coverage didnt increase further due to the inclusion of my own coverage tool into the function. The inclusion of this tool into the function itself caused alot of statements to go unused as they are exclusive statements to my own coverage tool. For example the area with tests for my own coverage tool.
+   New tests: <br />
+   <img src="readme_imgs/CaioImages/OwnCoverageTool/hungarianTests.png"
+   alt="new test for _parse_date_hungarian"
+   style="float: left; margin-right: 10px;" />
+   
+   New covarage results: <br />
+   <img src="readme_imgs/CaioImages/header.png"
+   alt="Coverage 2 before"
+   style="float: left; margin-right: 10px;" />
+   <img src="readme_imgs/CaioImages/hungarianResultsNew.png"
+   alt="Coverage 2 before"
+   style="float: left; margin-right: 10px;" />
+
+As can be seen by the change of result from the tox test we can see we have raised our coverage from 0% to 100% in both branch and statement coverage. This is because before hand there where no tests for this function and by adding them and addressing each indivudal branch we are able to cover every statement and branch. Thus, by combining the change in result of our own coverage test and those of the included one we have seen an increase to 100% of both branch and statement coverage.
 
 ---
 
-##### Test 2 - asctime.py
-   <Original cover results:>
-   <img src="readme_imgs/header.png"
+##### Test 2 - _parse_date_asctime
+
+   Original cover results: <br />
+   <img src="readme_imgs/CaioImages/original/asctimeOriginal.png"
+   alt="Coverage asctime before"
+   style="float: left; margin-right: 10px;" />
+   
+   <img src="readme_imgs/CaioImages/original/asctimeReportOriginal.png"
+   alt="Report of asctime results"
+   style="float: left; margin-right: 10px;" />
+
+   New tests: <br />
+   <img src="readme_imgs/CaioImages/OwnCoverageTool/asctimeTests.png"
+   alt="new test for _parse_date_asctime"
+   style="float: left; margin-right: 10px;" />
+   
+   New covarage results: <br />
+   <img src="readme_imgs/CaioImages/header.png"
    alt="Coverage 2 before"
    style="float: left; margin-right: 10px;" />
-   <img src="readme_imgs/Hungarian&Greek.png"
+   <img src="readme_imgs/CaioImages/asctimeResultsNew.png"
    alt="Coverage 2 before"
    style="float: left; margin-right: 10px;" />
 
-   <New tests:>
-   <img src="readme_imgs/newtestsasc.png"
-   alt="new test for asctime.py"
-   style="float: left; margin-right: 10px;" />
-
-   <New covarage results:>
-   <img src="readme_imgs/header.png"
-   alt="Coverage 2 before"
-   style="float: left; margin-right: 10px;" />
-   <img src="readme_imgs/correcthun&ascfinal.png"
-   alt="Coverage 2 before"
-   style="float: left; margin-right: 10px;" />
-
-   Overall we saw an improvement in coverage of 17%, we saw this improvements because of a similar reason as the previous test. Just like in the previous case we had a low initial coverage because certain branches where either always true or always false with the pre-exisiting tests. However, the tests I added ensure that either case of every branch is tested and therefore we had an increase in the overall coverage of this function by 17%. Just like in the rpevious test case, it is important to note that due to the inclusion of my own coverage tool into the function, the coverage wasnt able to be higher. This is due to the fact that certain areas of the code where exclusive to my coverage tool and therefore not tested. Thus, hampering the overall coverage
+Just like the previous function we have seen a raise of 100% on both the branch and statement coverage of this function. Just like the previous case this is because there included tests didnt cover it at all. Therefore, by adding the appropriate tests we are abler to increase both its branch and statement coverage. by combining the results of our own coverage tool and those of the included one we can clearly see and increase to 100% on the branch and statement coverage for this function.
 
 ---
 
@@ -442,6 +448,11 @@ also "./run.sh coverage-all", and I've provided an example of the tests I've mad
 for my teammates to help understand how they can test their functions.
 Especially since _is_base64 function is a method from a class, it is harder to test, 
 but I managed how to and set an example for the group doing this.
+
+---
+
+### Caio Miranda Haschelevici
+I worked on the functions _parse_date_hungarian and _parse_date_asctime, creating tests to increase there branch and statement coverage from 0% to 100%, as initially therfe where no tests that ran these functions. Not only that, but I made my own coverage tool to test the branch coverages of these functions, it even calculated the branch coverage percentage after every run of the main function. The results of my efforts can be found in the test files coverageAsc and coverageHun respectuflly, as every time my coverage tool runs it writes the results onto these files. Furthermore, I also helped in the beggining in the search for projects proposing a few ideas, that due to being hard to setup, where not taken. I also helped my teammates in properly setting up push requests from there local branches to branches found in the actual repository.
 
 ---
 

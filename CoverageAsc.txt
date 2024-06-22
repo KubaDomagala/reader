@@ -1,0 +1,11 @@
+parse_date_asctime_1 was not hit
+parse_date_asctime_2 was hit
+parse_date_asctime_3 was hit
+parse_date_asctime_4 was not hit
+Branch coverage percentage: 50.0%
+
+parse_date_asctime_1 was hit
+parse_date_asctime_2 was hit
+parse_date_asctime_3 was hit
+parse_date_asctime_4 was hit
+Branch coverage percentage: 100.0%
