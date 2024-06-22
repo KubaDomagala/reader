@@ -94,7 +94,7 @@ The coverage tool can be run by using pytest -s tests/test_parser.py
    Own coverage tool results after making own tests: <br />
    <img src="readme_imgs/CaioImages/OwnCoverageTool/hungarianBCResults.png"
    alt="hungarian own test results"
-   style="float: left; margin-right: 10px;" />
+   style="float: left; margin-right: 10px;" /> <br />  
    Due to the 0% stateent coverage and the fact no exisiting tests called this function. The code produced no results and thus had a branch coverage of 0% before the new tests were added.
 
    How to run:
@@ -130,7 +130,7 @@ The coverage tool can be run by using pytest -s tests/test_parser.py
    Own coverage tool results after making own tests: <br />
    <img src="readme_imgs/CaioImages/OwnCoverageTool/asctimeBCResults.png"
    alt="asctime own test results"
-   style="float: left; margin-right: 10px;" />
+   style="float: left; margin-right: 10px;" /> <br />  
    Due to the 0% stateent coverage and the fact no exisiting tests called this function. The code produced no results and thus had a branch coverage of 0% before the new tests were added.
 
    How to run:
