@@ -1,6 +1,9 @@
 import io
 import json
 import logging
+
+# Korean nate test
+import re
 from contextlib import contextmanager
 from unittest.mock import MagicMock
 
@@ -18,16 +21,17 @@ from reader._parser.jsonfeed import JSONFeedParser
 from reader._parser.requests import SessionWrapper
 from reader._types import FeedData
 from reader._vendor import feedparser
-from reader.exceptions import ParseError
-from utils import make_url_base
-
-# Korean nate test
-import re
+from reader._vendor.feedparser.datetimes.asctime import _parse_date_asctime
+from reader._vendor.feedparser.datetimes.hungarian import _parse_date_hungarian
+from reader._vendor.feedparser.datetimes.korean import _parse_date_nate
+from reader._vendor.feedparser.datetimes.korean import return_w3dtf
 from reader._vendor.feedparser.datetimes.w3dtf import _parse_date_w3dtf
-from reader._vendor.feedparser.datetimes.korean import _parse_date_nate, return_w3dtf
 
 # Parse poslist test
 from reader._vendor.feedparser.namespaces.georss import _parse_poslist
+from reader.exceptions import ParseError
+from utils import make_url_base
+
 
 # Parse perforce test
 # import time
@@ -1070,7 +1074,9 @@ def test_retriever_selection():
 
 # TESTING FOR KOREAN NATE FORMAT
 def test_korean_nate_format():
-    w3dtf_regex = re.compile(r'^\d{4}-\d{1,2}-\d{1,2}T\d{1,2}:\d{1,2}:\d{1,2}([+-]\d{2}:\d{2}|Z)$')
+    w3dtf_regex = re.compile(
+        r'^\d{4}-\d{1,2}-\d{1,2}T\d{1,2}:\d{1,2}:\d{1,2}([+-]\d{2}:\d{2}|Z)$'
+    )
 
     # proper Korean nate format
     result = _parse_date_nate("2023-06-11 오전 09:15:00")
@@ -1086,13 +1092,81 @@ def test_korean_nate_format():
     result = _parse_date_nate("This is Edwin")
     assert w3dtf_regex.match(return_w3dtf(result))
 
+
 # TESTING FOR PARSE POSLIST
 def test_parse_poslist():
     # linestring
-    assert {'type': 'LineString', 'coordinates': [(20.0, 10.0)]} == _parse_poslist("10,20,30", "linestring", swap=True, dims=2)
+    assert {'type': 'LineString', 'coordinates': [(20.0, 10.0)]} == _parse_poslist(
+        "10,20,30", "linestring", swap=True, dims=2
+    )
 
     # polygon
-    assert {'type': 'Polygon', 'coordinates': ([(20.0, 10.0)],)} == _parse_poslist("10,20,30", "polygon", swap=True, dims=2)
+    assert {'type': 'Polygon', 'coordinates': ([(20.0, 10.0)],)} == _parse_poslist(
+        "10,20,30", "polygon", swap=True, dims=2
+    )
 
     # nothing
     assert None == _parse_poslist("10,20,30", "", swap=True, dims=2)
+
+
+def test_hungarian():
+    open("Coverage.txt", "w").close()
+
+    def sametime(time, year, month, day, hour, minute):
+        if (
+            time.tm_year == year
+            and time.tm_mon == month
+            and time.tm_mday == day
+            and time.tm_hour == hour
+            and time.tm_min == minute
+        ):
+            return True
+        else:
+            return False
+
+    assert _parse_date_hungarian("INVALID") == None
+
+    assert (
+        sametime(
+            _parse_date_hungarian("1999-november-2T02:10+01:10"), 1999, 11, 2, 1, 0
+        )
+        == True
+    )
+
+    assert (
+        sametime(
+            _parse_date_hungarian("1999-november-02T2:10+01:10"), 1999, 11, 2, 1, 0
+        )
+        == True
+    )
+
+
+def test_asctime():
+    open("CoverageAsc.txt", "w").close()
+
+    def sametime(time, year, month, day, hour, minute, second):
+        if (
+            time.tm_year == year
+            and time.tm_mon == month
+            and time.tm_mday == day
+            and time.tm_hour == hour
+            and time.tm_min == minute
+            and time.tm_sec == second
+        ):
+            return True
+        else:
+            return False
+
+    assert _parse_date_asctime("INVALID") == None
+    assert (
+        sametime(
+            _parse_date_asctime("thursday may 13 18:55:30 2024"),
+            2024,
+            5,
+            13,
+            18,
+            55,
+            30,
+        )
+        == True
+    )
