@@ -1082,15 +1082,15 @@ def test_korean_nate_format():
     result = _parse_date_nate("2023-06-11 오전 09:15:00")
     assert w3dtf_regex.match(return_w3dtf(result))
     result = _parse_date_nate("2021-06-15 오후 14:45:30")
-    assert w3dtf_regex.match(return_w3dtf(result))
+    assert None == result
 
     # proper Korean onblog format
     result = _parse_date_nate("2023년 06월 11일 09:15:00")
-    assert w3dtf_regex.match(return_w3dtf(result))
+    assert None == result
 
     # completely wrong format
     result = _parse_date_nate("This is Edwin")
-    assert w3dtf_regex.match(return_w3dtf(result))
+    assert None == result
 
 
 # TESTING FOR PARSE POSLIST
