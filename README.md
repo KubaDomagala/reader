@@ -91,11 +91,13 @@ The coverage tool can be run by using pytest -s tests/test_parser.py
    alt="hungarian new code 3"
    style="float: left; margin-right: 10px;" />
 
-   Own coverage tool results with own tests: <br />
+   Own coverage tool results after making own tests: <br />
    <img src="readme_imgs/CaioImages/OwnCoverageTool/hungarianBCResults.png"
    alt="hungarian own test results"
    style="float: left; margin-right: 10px;" />
+   Due to the 0% stateent coverage and the fact no exisiting tests called this function. The code produced no results and thus had a branch coverage of 0% before the new tests were added.
 
+   How to run:
    Coverage tool can be run by using pytest tests/test_parser.py or even the tox command. Results of the branch coverage will be placed in the CoverageHun.txt file. 
 
 --- 
@@ -125,11 +127,13 @@ The coverage tool can be run by using pytest -s tests/test_parser.py
    alt="asctime new code 3"
    style="float: left; margin-right: 10px;" />
 
-   Own coverage tool results with own tests: <br />
+   Own coverage tool results after making own tests: <br />
    <img src="readme_imgs/CaioImages/OwnCoverageTool/asctimeBCResults.png"
    alt="asctime own test results"
    style="float: left; margin-right: 10px;" />
+   Due to the 0% stateent coverage and the fact no exisiting tests called this function. The code produced no results and thus had a branch coverage of 0% before the new tests were added.
 
+   How to run:
    Coverage tool can be run by using pytest tests/test_parser.py or even the tox command. Results of the branch coverage will be placed in the CoverageAsc.txt file. 
 
 ---
@@ -444,6 +448,11 @@ also "./run.sh coverage-all", and I've provided an example of the tests I've mad
 for my teammates to help understand how they can test their functions.
 Especially since _is_base64 function is a method from a class, it is harder to test, 
 but I managed how to and set an example for the group doing this.
+
+---
+
+### Caio Miranda Haschelevici
+I worked on the functions _parse_date_hungarian and _parse_date_asctime, creating tests to increase there branch and statement coverage from 0% to 100%, as initially therfe where no tests that ran these functions. Not only that, but I made my own coverage tool to test the branch coverages of these functions, it even calculated the branch coverage percentage after every run of the main function. The results of my efforts can be found in the test files coverageAsc and coverageHun respectuflly, as every time my coverage tool runs it writes the results onto these files. Furthermore, I also helped in the beggining in the search for projects proposing a few ideas, that due to being hard to setup, where not taken. I also helped my teammates in properly setting up push requests from there local branches to branches found in the actual repository.
 
 ---
 
