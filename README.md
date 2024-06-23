@@ -37,6 +37,10 @@ And
 
 https://github.com/KubaDomagala/reader/commit/d77e6039e13b0425a36f6e1117c047700779896d
 
+And
+
+https://github.com/KubaDomagala/reader/commit/6fbe1d5c5769dcbbac7284a1e25a60f7f294a48f
+
 <Provide a screenshot of the coverage results output by the instrumentation>
 
 ![is_base_64 on own coverage tool](readme_imgs/is_base_64_own_coverage_tool.png)
@@ -55,6 +59,10 @@ https://github.com/KubaDomagala/reader/commit/92fcd2ff30c1292d1ed557ab4cf23a8ea9
 And
 
 https://github.com/KubaDomagala/reader/commit/d77e6039e13b0425a36f6e1117c047700779896d
+
+And
+
+https://github.com/KubaDomagala/reader/commit/6fbe1d5c5769dcbbac7284a1e25a60f7f294a48f
   
 ![map_content_type on own coverage tool img1](readme_imgs/map_content_type_own_coverage_tool_1.png)
 

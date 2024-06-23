@@ -21,6 +21,8 @@ from reader._parser.jsonfeed import JSONFeedParser
 from reader._parser.requests import SessionWrapper
 from reader._types import FeedData
 from reader._vendor import feedparser
+from reader._vendor.feedparser.mixin import XMLParserMixin
+from reader._vendor.feedparser.mixin import FeedParserDict
 from reader._vendor.feedparser.datetimes.asctime import _parse_date_asctime
 from reader._vendor.feedparser.datetimes.hungarian import _parse_date_hungarian
 from reader._vendor.feedparser.datetimes.korean import _parse_date_nate
@@ -1169,3 +1171,32 @@ def test_asctime():
         )
         == True
     )
+
+def test_map_content_type():
+    self = XMLParserMixin()
+    
+    assert(self.map_content_type('text') == 'text/plain')
+
+    assert(self.map_content_type('html') == 'text/html')
+
+    assert(self.map_content_type('xhtml') == 'application/xhtml+xml')
+
+def test_is_base64():
+    def setup(attrs_d):
+        self = XMLParserMixin()
+
+        self.contentparams = FeedParserDict({
+            'type': self.map_content_type(attrs_d.get('type')),
+            'language': '',
+            'base': ''})
+        return self._is_base64(attrs_d, self.contentparams)
+
+    assert(setup({'type': 'text/', 'mode': 'base64'}) == 1)
+
+    assert(setup({'type': 'text/'}) == 0)
+
+    assert(setup({'type': '+xml'}) == 0)
+
+    assert(setup({'type': '/xml'}) == 0)
+
+    assert(setup({'type': 'abc'}) == 1)
