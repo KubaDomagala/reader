@@ -186,13 +186,16 @@ def print_coverage():
 def _parse_poslist(value, geom_type, swap=True, dims=2):
     if geom_type == 'linestring':
         branch_coverage["_parse_poslist_1"] = True
+        print_coverage()
         return _parse_georss_line(value, swap, dims)
     elif geom_type == 'polygon':
         branch_coverage["_parse_poslist_2"] = True
         ring = _parse_georss_line(value, swap, dims)
+        print_coverage()
         return {'type': 'Polygon', 'coordinates': (ring['coordinates'],)}
     else:
         branch_coverage["_parse_poslist_3"] = True
+        print_coverage()
         return None
 
 
@@ -301,13 +304,13 @@ _geogCS = [
 
 if __name__ == '__main__':
     result = _parse_poslist("10,20", "linestring", swap=True, dims=2)
-    print_coverage()
+    #print_coverage()
     assert {'type': 'LineString', 'coordinates': [(20.0, 10.0)]} == result
 
     result = _parse_poslist("10,20", "polygon", swap=True, dims=2)
-    print_coverage()
+    #print_coverage()
     assert {'type': 'Polygon', 'coordinates': ([(20.0, 10.0)],)} == result
 
     result = _parse_poslist("10,20", "", swap=True, dims=2)
-    print_coverage()
+    #print_coverage()
     assert None == result
