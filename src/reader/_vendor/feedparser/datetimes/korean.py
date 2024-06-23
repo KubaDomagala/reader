@@ -71,13 +71,14 @@ branch_coverage = {
 def print_coverage():
     num_branches = 0
     hit_branches = 0 
-    for branch, hit in branch_coverage.items():
-        if hit: 
-            hit_branches += 1
-        print(f"{branch} was {'hit' if hit else 'not hit'}")
-        num_branches += 1
+    with open("korean_cov_report", "a") as coverageFile:
+        for branch, hit in branch_coverage.items():
+            if hit: 
+                hit_branches += 1
+            coverageFile.write(f"{branch} was {'hit' if hit else 'not hit'}\n")
+            num_branches += 1
     
-    print(f"Current Branch Coverage: {int(hit_branches/num_branches * 100)}%\n")
+        coverageFile.write(f"Current Branch Coverage: {int(hit_branches/num_branches * 100)}%\n\n")
 
 
 
@@ -103,6 +104,7 @@ def _parse_date_nate(dateString):
     else:
         branch_coverage["parse_data_nate_4"] = True
     
+
     hour = str(hour)
     if len(hour) == 1:
         branch_coverage["parse_data_nate_5"] = True
@@ -138,22 +140,22 @@ def return_w3dtf(m):
     return w3dtfdate
 
 
-if __name__ == '__main__':
-    w3dtf_regex = re.compile(r'^\d{4}-\d{1,2}-\d{1,2}T\d{1,2}:\d{1,2}:\d{1,2}([+-]\d{2}:\d{2}|Z)$')
+# if __name__ == '__main__':
+#     w3dtf_regex = re.compile(r'^\d{4}-\d{1,2}-\d{1,2}T\d{1,2}:\d{1,2}:\d{1,2}([+-]\d{2}:\d{2}|Z)$')
     
-    print("...Staring the _parse_date_nate TEST...")
+#     print("...Staring the _parse_date_nate TEST...")
 
-    # proper Korean nate format
-    result = _parse_date_nate("2023-06-11 오전 09:15:00")
-    #print_coverage()
-    result = _parse_date_nate("2021-06-15 오후 14:45:30")
-    #print_coverage()
+#     # proper Korean nate format
+#     result = _parse_date_nate("2023-06-11 오전 09:15:00")
+#     #print_coverage()
+#     result = _parse_date_nate("2021-06-15 오후 14:45:30")
+#     #print_coverage()
 
-    # proper Korean onblog format
-    result = _parse_date_nate("2023년 06월 11일 09:15:00")
-    #print_coverage()
+#     # proper Korean onblog format
+#     result = _parse_date_nate("2023년 06월 11일 09:15:00")
+#     #print_coverage()
 
-    # different format 
-    result = _parse_date_nate("This is Edwin")
-    #print_coverage()
+#     # different format 
+#     result = _parse_date_nate("This is Edwin")
+#     #print_coverage()
     
