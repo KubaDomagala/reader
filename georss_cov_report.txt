@@ -13,3 +13,17 @@ _parse_poslist_2 was hit
 _parse_poslist_3 was hit
 Current Branch Coverage: 100%
 
+_parse_poslist_1 was hit
+_parse_poslist_2 was not hit
+_parse_poslist_3 was not hit
+Current Branch Coverage: 33%
+
+_parse_poslist_1 was hit
+_parse_poslist_2 was hit
+_parse_poslist_3 was not hit
+Current Branch Coverage: 66%
+
+_parse_poslist_1 was hit
+_parse_poslist_2 was hit
+_parse_poslist_3 was hit
+Current Branch Coverage: 100%

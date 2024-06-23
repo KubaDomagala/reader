@@ -28,7 +28,7 @@
 
 # Required for Python 3.6 compatibility.
 from __future__ import generator_stop
-
+from reader._vendor.feedparser.util import FeedParserDict
 
 
 
@@ -174,7 +174,7 @@ branch_coverage = {
 def print_coverage():
     num_branches = 0
     hit_branches = 0 
-    with open("georss_cov_report", "a") as coverageFile:
+    with open("georss_cov_report.txt", "a") as coverageFile:
         for branch, hit in branch_coverage.items():
             if hit: 
                 hit_branches += 1

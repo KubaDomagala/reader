@@ -27,7 +27,7 @@
 
 import re
 
-from w3dtf import _parse_date_w3dtf
+from reader._vendor.feedparser.datetimes.w3dtf import _parse_date_w3dtf
 
 # 8-bit date handling routines written by ytrewq1.
 _korean_year = '\ub144' # b3e2 in euc-kr
@@ -71,7 +71,7 @@ branch_coverage = {
 def print_coverage():
     num_branches = 0
     hit_branches = 0 
-    with open("korean_cov_report", "a") as coverageFile:
+    with open("korean_cov_report.txt", "a") as coverageFile:
         for branch, hit in branch_coverage.items():
             if hit: 
                 hit_branches += 1
