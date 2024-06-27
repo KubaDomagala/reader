@@ -1181,6 +1181,8 @@ def test_map_content_type():
 
     assert(self.map_content_type('xhtml') == 'application/xhtml+xml')
 
+    assert(self.map_content_type('awdhawdjaiwdj') == 'awdhawdjaiwdj')
+
 def test_is_base64():
     def setup(attrs_d):
         self = XMLParserMixin()
