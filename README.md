@@ -63,6 +63,10 @@ https://github.com/KubaDomagala/reader/commit/d77e6039e13b0425a36f6e1117c0477007
 And
 
 https://github.com/KubaDomagala/reader/commit/6fbe1d5c5769dcbbac7284a1e25a60f7f294a48f
+
+And
+
+https://github.com/KubaDomagala/reader/commit/2899ea9442716eb0690011dbcf33b4737815203f
   
 ![map_content_type on own coverage tool img1](readme_imgs/map_content_type_own_coverage_tool_1.png)
 
