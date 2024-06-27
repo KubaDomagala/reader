@@ -28,8 +28,8 @@
 
 # Required for Python 3.6 compatibility.
 from __future__ import generator_stop
-
 from reader._vendor.feedparser.util import FeedParserDict
+
 
 
 class Namespace(object):
@@ -174,25 +174,29 @@ branch_coverage = {
 def print_coverage():
     num_branches = 0
     hit_branches = 0 
-    for branch, hit in branch_coverage.items():
-        if hit: 
-            hit_branches += 1
-        print(f"{branch} was {'hit' if hit else 'not hit'}")
-        num_branches += 1
+    with open("georss_cov_report.txt", "a") as coverageFile:
+        for branch, hit in branch_coverage.items():
+            if hit: 
+                hit_branches += 1
+            coverageFile.write(f"{branch} was {'hit' if hit else 'not hit'}\n")
+            num_branches += 1
     
-    print(f"Current Branch Coverage: {int(hit_branches/num_branches * 100)}%\n")
+        coverageFile.write(f"Current Branch Coverage: {int(hit_branches/num_branches * 100)}%\n\n")
 
 
 def _parse_poslist(value, geom_type, swap=True, dims=2):
     if geom_type == 'linestring':
         branch_coverage["_parse_poslist_1"] = True
+        print_coverage()
         return _parse_georss_line(value, swap, dims)
     elif geom_type == 'polygon':
         branch_coverage["_parse_poslist_2"] = True
         ring = _parse_georss_line(value, swap, dims)
+        print_coverage()
         return {'type': 'Polygon', 'coordinates': (ring['coordinates'],)}
     else:
         branch_coverage["_parse_poslist_3"] = True
+        print_coverage()
         return None
 
 
@@ -299,15 +303,15 @@ _geogCS = [
 
 
 
-if __name__ == '__main__':
-    result = _parse_poslist("10,20", "linestring", swap=True, dims=2)
-    print_coverage()
-    assert {'type': 'LineString', 'coordinates': [(20.0, 10.0)]} == result
+# if __name__ == '__main__':
+#     result = _parse_poslist("10,20", "linestring", swap=True, dims=2)
+#     #print_coverage()
+#     assert {'type': 'LineString', 'coordinates': [(20.0, 10.0)]} == result
 
-    result = _parse_poslist("10,20", "polygon", swap=True, dims=2)
-    print_coverage()
-    assert {'type': 'Polygon', 'coordinates': ([(20.0, 10.0)],)} == result
+#     result = _parse_poslist("10,20", "polygon", swap=True, dims=2)
+#     #print_coverage()
+#     assert {'type': 'Polygon', 'coordinates': ([(20.0, 10.0)],)} == result
 
-    result = _parse_poslist("10,20", "", swap=True, dims=2)
-    print_coverage()
-    assert None == result
+#     result = _parse_poslist("10,20", "", swap=True, dims=2)
+#     #print_coverage()
+#     assert None == result

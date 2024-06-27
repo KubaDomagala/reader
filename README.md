@@ -17,7 +17,6 @@ Programming language: python
 Tool: tox + coverage.py <br />
 Usage: The tool was used by following the guide on the contribute page of the project. We set up the development environment and run "tox" command, which run the full test suite using coverage.py. We found the result under "htmlcov/index.html" file name, which generated a file with the coverage (it can also be found in the terminal, however the html file is easier to read).
 
-<Show the coverage results provided by the existing tool with a screenshot>
   <img src="readme_imgs/coverage_tool_run_1.png"
      alt="Coverage 1 before"
      style="float: left; margin-right: 10px;" />
@@ -79,7 +78,7 @@ The coverage tool can be run by using pytest -s tests/test_parser.py
 #### Caio Miranda Haschelevici <br />
 ##### Function 1 - _parse_date_hungarian
 
-   Original cover results: <br />  
+   Original cover results: <br />
    <img src="readme_imgs/CaioImages/original/hungarianOriginal.png"
    alt="Coverage hungarian and asctime before"
    style="float: left; margin-right: 10px;" />
@@ -91,7 +90,7 @@ The coverage tool can be run by using pytest -s tests/test_parser.py
    <img src="readme_imgs/CaioImages/original/hungarianFuncOriginal.png"
    alt= "hungarian original code 2"
    style="float: left; margin-right: 10px;" />
-     
+
    Changed code to make coverage tool: <br />
    <img src="readme_imgs/CaioImages/hungarianImportNew.png"
    alt="hungarian new code 1"
@@ -106,16 +105,16 @@ The coverage tool can be run by using pytest -s tests/test_parser.py
    Own coverage tool results after making own tests: <br />
    <img src="readme_imgs/CaioImages/OwnCoverageTool/hungarianBCResults.png"
    alt="hungarian own test results"
-   style="float: left; margin-right: 10px;" /> <br />  
+   style="float: left; margin-right: 10px;" /> <br />
    Due to the 0% stateent coverage and the fact no exisiting tests called this function. The code produced no results and thus had a branch coverage of 0% before the new tests were added.
 
    How to run: <br />
-   Coverage tool can be run by using pytest tests/test_parser.py or even the tox command. Results of the branch coverage will be placed in the CoverageHun.txt file. 
+   Coverage tool can be run by using pytest tests/test_parser.py or even the tox command. Results of the branch coverage will be placed in the CoverageHun.txt file.
 
---- 
+---
 ##### Function 2 - _parse_date_asctime
 
-   Original cover results: <br />  
+   Original cover results: <br />
    <img src="readme_imgs/CaioImages/original/asctimeOriginal.png"
    alt="Coverage hungarian and asctime before"
    style="float: left; margin-right: 10px;" />
@@ -123,11 +122,11 @@ The coverage tool can be run by using pytest -s tests/test_parser.py
    Original code: <br />
    <img src="readme_imgs/CaioImages/original/asctimeImportOriginal.png"
    alt="asctime original code 1"
-   style="float: left; margin-right: 10px;" />  <br /> 
+   style="float: left; margin-right: 10px;" />  <br />
    <img src="readme_imgs/CaioImages/original/asctimeFuncOriginal.png"
    alt= "asctime original code 2"
    style="float: left; margin-right: 10px;" />
-     
+
    Changed code to make coverage tool: <br />
    <img src="readme_imgs/CaioImages/asctimeImportNew.png"
    alt="asctime new code 1"
@@ -142,17 +141,17 @@ The coverage tool can be run by using pytest -s tests/test_parser.py
    Own coverage tool results after making own tests: <br />
    <img src="readme_imgs/CaioImages/OwnCoverageTool/asctimeBCResults.png"
    alt="asctime own test results"
-   style="float: left; margin-right: 10px;" /> <br />  
+   style="float: left; margin-right: 10px;" /> <br />
    Due to the 0% stateent coverage and the fact no exisiting tests called this function. The code produced no results and thus had a branch coverage of 0% before the new tests were added.
 
    How to run: <br />
-   Coverage tool can be run by using pytest tests/test_parser.py or even the tox command. Results of the branch coverage will be placed in the CoverageAsc.txt file. 
+   Coverage tool can be run by using pytest tests/test_parser.py or even the tox command. Results of the branch coverage will be placed in the CoverageAsc.txt file.
 
 ---
 
 #### Kuba Domagala <br />
 ##### Function 1 - _build_urilib2_request
-  
+
 1. Link to the commit with the changed code of the function(_vendor/feedparser/http.py file) - https://github.com/KubaDomagala/reader/commit/108385f001ee1d6462d8b52357b04410e9d40a48#diff-c55ed7a611ef230781c2cab96ac3fb2fba6468e7b2e92d0a9abe2b49f6ebaf08
 (The results can also be seen in the commit in the file "_build_urllib2_request_coverage.txt" )
 2. Link to the update of the modification - https://github.com/KubaDomagala/reader/commit/ad3b7296bda99e7e16bd29c0651d3bcb7fd29aa7
@@ -231,7 +230,7 @@ https://github.com/KubaDomagala/reader/commit/ed1d0cf4e1849477d5700d74490750b2d6
 
 ![_parse_poslist coverage tool](readme_imgs/_parse_poslist_COVERAGE_PRINT.png)
 
-The coverage tool for _parse_poslist() is written under the file [src/reader/_vendor/feedparser/namespaces/georss.py](https://github.com/KubaDomagala/reader/blob/coverage-improv-1/src/reader/_vendor/feedparser/namespaces/georss.py), same location of where _parse_poslist() exists in. To run this, simply run the georss.py file from the terminal with the command <code>python3 ./src/reader/_vendor/feedparser/namespaces/georss.py</code>. As it can be seen with my own coverage tool, all of the branches in _parse_poslist() were hit, leading to a coverage percentage of 100%. 
+The coverage tool for _parse_poslist() is written under the file [src/reader/_vendor/feedparser/namespaces/georss.py](https://github.com/KubaDomagala/reader/blob/coverage-improv-1/src/reader/_vendor/feedparser/namespaces/georss.py), same location of where _parse_poslist() exists in. To run this, simply run the georss.py file from the terminal with the command <code>python3 ./src/reader/_vendor/feedparser/namespaces/georss.py</code>. As it can be seen with my own coverage tool, all of the branches in _parse_poslist() were hit, leading to a coverage percentage of 100%.
 
 ---
 
@@ -241,7 +240,7 @@ My commitment can be found by clicking this link:
 https://github.com/KubaDomagala/reader/commit/a89c04e040ff6391efdc5a9db8f64e37fcaadd3e
 ![_parse_poslist coverage tool](readme_imgs/_parse_date_nate_COVERAGE_PRINT.png)
 
-The coverage tool for _parse_date_nate() is written under the file [src/reader/_vendor/feedparser/datetimes/korean.py](https://github.com/KubaDomagala/reader/blob/coverage-improv-1/src/reader/_vendor/feedparser/datetimes/korean.py), same location of where _parse_date_nate() exists in. To run this, simply run the korean.py file from the terminal with the command <code>python3 src/reader/_vendor/feedparser/datetimes/korean.py</code>. As it can be seen with my own coverage tool, all of the branches in _parse_date_nate() were hit, leading to a coverage percentage of 100%. 
+The coverage tool for _parse_date_nate() is written under the file [src/reader/_vendor/feedparser/datetimes/korean.py](https://github.com/KubaDomagala/reader/blob/coverage-improv-1/src/reader/_vendor/feedparser/datetimes/korean.py), same location of where _parse_date_nate() exists in. To run this, simply run the korean.py file from the terminal with the command <code>python3 src/reader/_vendor/feedparser/datetimes/korean.py</code>. As it can be seen with my own coverage tool, all of the branches in _parse_date_nate() were hit, leading to a coverage percentage of 100%.
 
 ## Coverage improvement
 
@@ -249,7 +248,7 @@ The coverage tool for _parse_date_nate() is written under the file [src/reader/_
 
 #### Yves Mangano <br />
 ##### Test 1
-  
+
 https://github.com/KubaDomagala/reader/commit/92fcd2ff30c1292d1ed557ab4cf23a8ea9cd9fc6#diff-237d6caeea59e3cf8f303958b4b29e752861048496a047a6af38a12915a02e32
 
 ![IMG1 old results](readme_imgs/_is_base64_old_coverage_results.png)
@@ -260,7 +259,7 @@ https://github.com/KubaDomagala/reader/commit/92fcd2ff30c1292d1ed557ab4cf23a8ea9
 The coverage for function _is_base64 improved from 0% to 100%. This is because
 there were simply no tests made for _is_base64, causing in a branch coverage of 0%.
 However, since I have added tests to make sure each branch condition is tested
-and accessed, the branch condition went up to 100%. 
+and accessed, the branch condition went up to 100%.
 
 ---
 
@@ -274,7 +273,7 @@ https://github.com/KubaDomagala/reader/commit/92fcd2ff30c1292d1ed557ab4cf23a8ea9
 The coverage for function map_content_type improved from 0% to 100%. This is because
 there were simply no tests made for map_content_type, causing in a branch coverage of 0%.
 However, since I have added tests to make sure each branch condition is tested
-and accessed, the branch condition went up to 100%. 
+and accessed, the branch condition went up to 100%.
 
 ---
 
@@ -285,7 +284,7 @@ and accessed, the branch condition went up to 100%.
    <img src="readme_imgs/CaioImages/original/hungarianOriginal.png"
    alt="Coverage hungarian before"
    style="float: left; margin-right: 10px;" />
-   
+
    <img src="readme_imgs/CaioImages/original/hungarianReportOriginal.png"
    alt="Report of Hungarian results"
    style="float: left; margin-right: 10px;" />
@@ -294,7 +293,7 @@ and accessed, the branch condition went up to 100%.
    <img src="readme_imgs/CaioImages/OwnCoverageTool/hungarianTests.png"
    alt="new test for _parse_date_hungarian"
    style="float: left; margin-right: 10px;" />
-   
+
    New covarage results: <br />
    <img src="readme_imgs/CaioImages/header.png"
    alt="Coverage 2 before"
@@ -313,7 +312,7 @@ As can be seen by the change of result from the tox test we can see we have rais
    <img src="readme_imgs/CaioImages/original/asctimeOriginal.png"
    alt="Coverage asctime before"
    style="float: left; margin-right: 10px;" />
-   
+
    <img src="readme_imgs/CaioImages/original/asctimeReportOriginal.png"
    alt="Report of asctime results"
    style="float: left; margin-right: 10px;" />
@@ -322,7 +321,7 @@ As can be seen by the change of result from the tox test we can see we have rais
    <img src="readme_imgs/CaioImages/OwnCoverageTool/asctimeTests.png"
    alt="new test for _parse_date_asctime"
    style="float: left; margin-right: 10px;" />
-   
+
    New covarage results: <br />
    <img src="readme_imgs/CaioImages/header.png"
    alt="Coverage 2 before"
@@ -337,7 +336,7 @@ Just like the previous function we have seen a raise of 100% on both the branch 
 
 #### Kuba Domagala <br />
 ##### Test 1 - _build_urilib2_request
-  
+
 1. Link to the commit with added tests - https://github.com/KubaDomagala/reader/commit/108385f001ee1d6462d8b52357b04410e9d40a48#diff-371d71686903901ab120e582d2ca811179700201f7652353fdc03bc9f0fb9240 (in the file "tests/test_reader__vendor_feedparser_urls.py", function "test_build_urllib2_request()")
 2.https://github.com/KubaDomagala/reader/commit/92fcd2ff30c1292d1ed557ab4cf23a8ea9cd9fc6#diff-237d6caeea59e3cf8f303958b4b29e752861048496a047a6af38a12915a02e32
 
@@ -422,7 +421,7 @@ The coverage of the function has improved from 60% to 100% (branch coverage) and
 ![_parse_poslist new coverage %](readme_imgs/_parse_poslist_NEW_COVERAGE_PERC.png)
 
 Overall the coverage percentage increased from 0% t0 100%.
-The coverage percentage of _parse_poslist() was initially only 0%, meaing that it wasn't even tested in its original file. After building a tests for _parse_poslist(), all of the branches were hit, and the coverage percentage increased to 100%. 
+The coverage percentage of _parse_poslist() was initially only 0%, meaing that it wasn't even tested in its original file. After building a tests for _parse_poslist(), all of the branches were hit, and the coverage percentage increased to 100%.
 
 ---
 
@@ -433,14 +432,30 @@ The coverage percentage of _parse_poslist() was initially only 0%, meaing that i
 ![_parse_poslist new coverage %](readme_imgs/_parse_date_nate_NEW_COVERAGE_PERC.png)
 
 Overall the coverage percentage increased from 0% to 88%.
-The coverage percentage of _parse_date_nate() was initially only 0%, meaing that it wasn't even tested in its original file. After building a tests for _parse_date_nate(), all of the branches were hit, and the coverage percentage increased to 88%. 
+The coverage percentage of _parse_date_nate() was initially only 0%, meaing that it wasn't even tested in its original file. After building a tests for _parse_date_nate(), all of the branches were hit, and the coverage percentage increased to 88%.
 
 
 ### Overall
 
-<Provide a screenshot of the old coverage results by running an existing tool (the same as you already showed above)>
+#### Old results:
+  <img src="readme_imgs/coverage_tool_run_1.png"
+     alt="Coverage 1 before"
+     style="float: left; margin-right: 10px;" />
+  (tests in between that were skipped in the screenshots)
+  <img src="readme_imgs/coverage_tool_run_2.png"
+   alt="Coverage 2 before"
+   style="float: left; margin-right: 10px;" />
 
-<Provide a screenshot of the new coverage results by running the existing tool using all test modifications made by the group>
+---
+
+#### New results:
+  <img src="readme_imgs/overall_coverage_1.png"
+     alt="setup_logging after official file"
+     style="float: left; margin-right: 10px;" />
+(tests in between that were skipped in the screenshots)
+  <img src="readme_imgs/overall_coverage_2.png"
+     alt="setup_logging after official file"
+     style="float: left; margin-right: 10px;" />
 
 ## Statement of individual contributions
 
@@ -449,16 +464,16 @@ The coverage percentage of _parse_date_nate() was initially only 0%, meaing that
 I worked on the functions _is_base64 and map_content_type. I made my own coverage
 tool where the branch coverage can be shown by running pytest -s tests/test_parser.py
 
-I increased the branch coverage from 0% to 100% in these functions, enhancing 
+I increased the branch coverage from 0% to 100% in these functions, enhancing
 the overall coverage of the project, by creating my own tests in test_parser.py
-making sure that each branch is accessed and functions correctly by using 
+making sure that each branch is accessed and functions correctly by using
 assert statements inside of the tests.
 
 I've contributed also in our team by helping understand how the project works
 and how we can run the inbuilt coverage (coverage.py) not only by using "tox" but
-also "./run.sh coverage-all", and I've provided an example of the tests I've made 
+also "./run.sh coverage-all", and I've provided an example of the tests I've made
 for my teammates to help understand how they can test their functions.
-Especially since _is_base64 function is a method from a class, it is harder to test, 
+Especially since _is_base64 function is a method from a class, it is harder to test,
 but I managed how to and set an example for the group doing this.
 
 ---
