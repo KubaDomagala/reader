@@ -42,7 +42,8 @@ from .urls import _urljoin, make_safe_absolute_uri, resolve_relative_uris
 branch_coverage_map_content_type = {
     "map_content_type_1": False,
     "map_content_type_2": False,
-    "map_content_type_3": False
+    "map_content_type_3": False,
+    "map_content_type_4": False
 }
 
 def print_coverage_map_content_type():
@@ -473,6 +474,8 @@ class XMLParserMixin(
             print_coverage_map_content_type()
             branch_coverage_map_content_type["map_content_type_3"] = True
             content_type = 'application/xhtml+xml'
+        else:
+            branch_coverage_map_content_type["map_content_type_4"] = True
         return content_type
 
     def track_namespace(self, prefix, uri):
